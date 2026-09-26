@@ -123,6 +123,26 @@
     font-weight: 700; font-size: 13.5px; letter-spacing: .3px;
   }
 
+  /* BRAND SPOTLIGHT (test round, per-brand pages) */
+  .spotlight-bg { background: #fff; }
+  .spotlight-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .spotlight-card {
+    background: #f4f1ec; border-radius: 8px; padding: 28px; border-top: 4px solid #cf5c36;
+  }
+  .spotlight-card .origin {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    color: #cf5c36; margin-bottom: 8px;
+  }
+  .spotlight-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+  .spotlight-card p { font-size: 14.5px; color: #445; margin-bottom: 18px; }
+  .spotlight-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .spotlight-links a {
+    font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
+    padding: 9px 16px; border-radius: 3px;
+  }
+  .spotlight-links .visit { background: #16302f; color: #fff !important; }
+  .spotlight-links .contact { background: #cf5c36; color: #fff !important; }
+
   /* SHOWS */
   .shows-grid {
     margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
@@ -173,7 +193,7 @@
   @media (max-width: 860px) {
     nav ul { display: none; }
     h1.hero-title { font-size: 36px; }
-    .pillars, .brand-grid, .shows-grid { grid-template-columns: repeat(2,1fr); }
+    .pillars, .brand-grid, .shows-grid, .spotlight-grid { grid-template-columns: repeat(2,1fr); }
     .why-grid, .contact-inner { grid-template-columns: 1fr; }
     .stats-strip .wrap { grid-template-columns: repeat(2,1fr); }
   }
@@ -186,6 +206,7 @@
       <li><a href="#what">What we do</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#brands">Brands</a></li>
+      <li><a href="#spotlight">Spotlight</a></li>
       <li><a href="#shows">Bar shows</a></li>
       <li><a href="#contact" class="nav-cta">Work with us</a></li>
     </ul>
@@ -311,6 +332,34 @@
       <div class="brand-chip">Ron Cubay</div>
       <div class="brand-chip">Ron Cristóbal</div>
       <div class="brand-chip">Rhum J.M</div>
+    </div>
+  </div>
+</section>
+
+<section id="spotlight" class="spotlight-bg">
+  <div class="wrap">
+    <span class="section-tag">Brand spotlight (test round)</span>
+    <h2>Two partners, in full.</h2>
+    <p class="lead">A first look at what a full brand page looks like: real background on the distillery, and a direct way to reach The Rum Quarter about that specific brand. Every partner will get one of these.</p>
+    <div class="spotlight-grid">
+      <div class="spotlight-card">
+        <div class="origin">Jamaica</div>
+        <h3>Worthy Park Estate</h3>
+        <p>Nestled 1,200 feet above sea level, Worthy Park Estate spans over 10,000 acres of sugar cane fields and forest in the heart of Jamaica. The distillery crafts its award-winning Jamaican rum, including the signature Rum-Bar Rum, using traditions dating back to 1670. Sustainability and zero-waste production are central to how the estate operates.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://worthyparkestate.com" target="_blank" rel="noopener">Visit worthyparkestate.com</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Worthy Park Estate">Ask us about this brand</a>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="origin">El Salvador</div>
+        <h3>Ron Colón Salvadoreño</h3>
+        <p>RCS started as a bartender's passion project aiming to innovate the rum category. The name pays homage to the Colón, El Salvador's historic currency, retired in 2001 in favour of the US dollar. Like the old coins, rum only grows more valuable the longer it's aged, and RCS built its identity around that idea.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://roncolon.com" target="_blank" rel="noopener">Visit roncolon.com</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Ron Colón Salvadoreño">Ask us about this brand</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
