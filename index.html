@@ -1,14 +1,17 @@
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700;900&family=Inter:wght@400;500;600;700;800&display=swap');
   :root { color-scheme: light; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     background: #f4f1ec;
     color: #16302f;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 32px; }
+  h1, h2 { font-family: 'Fraunces', Georgia, serif; }
+  .service-row h3, .spotlight-card h3 { font-family: 'Fraunces', Georgia, serif; }
 
   /* NAV */
   nav {
@@ -22,32 +25,34 @@
   nav ul { display: flex; gap: 28px; list-style: none; }
   nav ul li a { color: #d8ece9; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
   nav ul li a:hover { color: #cf5c36; }
-  .nav-cta { background: #cf5c36; color: #fff !important; padding: 8px 16px; border-radius: 3px; font-size: 13px !important; }
+  .nav-cta { background: #cf5c36; color: #fff !important; padding: 8px 18px; border-radius: 20px; font-size: 13px !important; }
 
   /* HERO */
   .hero {
-    background: linear-gradient(160deg, #16302f 0%, #1d3f3d 60%, #244f4c 100%);
+    background:
+      repeating-linear-gradient(115deg, rgba(207,92,54,0.07) 0px, rgba(207,92,54,0.07) 2px, transparent 2px, transparent 34px),
+      linear-gradient(160deg, #16302f 0%, #1d3f3d 60%, #244f4c 100%);
     color: #fff;
-    padding: 90px 0 70px;
+    padding: 100px 0 76px;
     position: relative;
     overflow: hidden;
   }
   .hero::after {
     content: "";
-    position: absolute; right: -120px; top: -120px;
-    width: 420px; height: 420px; border-radius: 50%;
-    background: rgba(207,92,54,0.18);
+    position: absolute; right: -140px; top: -140px;
+    width: 460px; height: 460px; border-radius: 50%;
+    background: rgba(207,92,54,0.16);
   }
   .hero .wrap { position: relative; }
   .eyebrow {
     display: inline-block; background: #cf5c36; color: #fff;
     padding: 6px 14px; font-size: 12px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1.5px; border-radius: 3px;
-    margin-bottom: 22px;
+    text-transform: uppercase; letter-spacing: 1.5px; border-radius: 20px;
+    margin-bottom: 24px;
   }
   h1.hero-title {
-    font-size: 52px; font-weight: 800; line-height: 1.08;
-    max-width: 780px; letter-spacing: -1px;
+    font-size: 54px; font-weight: 700; line-height: 1.1;
+    max-width: 780px; letter-spacing: -0.5px;
   }
   h1.hero-title em { color: #cf5c36; font-style: normal; }
   .hero p.sub {
@@ -55,9 +60,11 @@
   }
   .hero-ctas { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; }
   .btn {
-    display: inline-block; padding: 14px 26px; border-radius: 3px;
+    display: inline-block; padding: 14px 28px; border-radius: 30px;
     font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .5px;
+    transition: transform .15s ease;
   }
+  .btn:hover { transform: translateY(-1px); }
   .btn-primary { background: #cf5c36; color: #fff; }
   .btn-outline { border: 2px solid #d8ece9; color: #fff; }
 
@@ -86,7 +93,7 @@
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px;
   }
   .pillar-card {
-    background: #16302f; color: #fff; border-radius: 6px; padding: 26px 22px;
+    background: #16302f; color: #fff; border-radius: 14px; padding: 28px 24px;
     border-left: 4px solid #cf5c36;
   }
   .pillar-card h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #cf5c36; margin-bottom: 12px; }
@@ -119,26 +126,28 @@
   }
   .brand-chip {
     background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 6px; padding: 18px 10px; text-align: center;
+    border-radius: 12px; padding: 18px 10px; text-align: center;
     font-weight: 700; font-size: 13.5px; letter-spacing: .3px;
+    transition: background .15s ease;
   }
+  .brand-chip:hover { background: rgba(255,255,255,0.12); }
 
-  /* BRAND SPOTLIGHT (test round, per-brand pages) */
+  /* BRAND SPOTLIGHT (dedicated per-brand pages) */
   .spotlight-bg { background: #fff; }
-  .spotlight-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .spotlight-grid { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .spotlight-card {
-    background: #f4f1ec; border-radius: 8px; padding: 28px; border-top: 4px solid #cf5c36;
+    background: #f4f1ec; border-radius: 16px; padding: 28px; border-top: 4px solid #cf5c36;
   }
   .spotlight-card .origin {
     font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
     color: #cf5c36; margin-bottom: 8px;
   }
-  .spotlight-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
-  .spotlight-card p { font-size: 14.5px; color: #445; margin-bottom: 18px; }
-  .spotlight-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .spotlight-card h3 { font-size: 21px; font-weight: 700; margin-bottom: 12px; }
+  .spotlight-card p { font-size: 14px; color: #445; margin-bottom: 18px; }
+  .spotlight-links { display: flex; gap: 10px; flex-wrap: wrap; }
   .spotlight-links a {
-    font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
-    padding: 9px 16px; border-radius: 3px;
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
+    padding: 9px 15px; border-radius: 20px;
   }
   .spotlight-links .visit { background: #16302f; color: #fff !important; }
   .spotlight-links .contact { background: #cf5c36; color: #fff !important; }
@@ -148,7 +157,7 @@
     margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
   }
   .show-card {
-    background: #fff; border: 1px solid #e4ddd0; border-radius: 6px; padding: 24px 20px;
+    background: #fff; border: 1px solid #e4ddd0; border-radius: 14px; padding: 24px 20px;
     border-top: 4px solid #cf5c36;
   }
   .show-card .place { font-weight: 800; font-size: 16px; margin-bottom: 6px; }
@@ -160,7 +169,7 @@
   .why-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .why-item {
     display: flex; gap: 14px; align-items: flex-start;
-    background: #f4f1ec; padding: 20px; border-radius: 6px;
+    background: #f4f1ec; padding: 20px; border-radius: 14px;
   }
   .why-dot {
     flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%;
@@ -180,7 +189,7 @@
   .contact-inner p.lead { color: #d8ece9; }
   .contact-card {
     background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 8px; padding: 30px;
+    border-radius: 16px; padding: 30px;
   }
   .contact-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #cf5c36; font-weight: 700; margin-bottom: 6px; }
   .contact-card .value { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
@@ -193,7 +202,7 @@
   @media (max-width: 860px) {
     nav ul { display: none; }
     h1.hero-title { font-size: 36px; }
-    .pillars, .brand-grid, .shows-grid, .spotlight-grid { grid-template-columns: repeat(2,1fr); }
+    .pillars, .brand-grid, .shows-grid, .spotlight-grid { grid-template-columns: repeat(2,1fr) !important; }
     .why-grid, .contact-inner { grid-template-columns: 1fr; }
     .stats-strip .wrap { grid-template-columns: repeat(2,1fr); }
   }
@@ -215,9 +224,9 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">The Rumah B.V. &middot; Rotterdam</span>
-    <h1 class="hero-title">The marketing partner<br>for the <em>rum world</em>.</h1>
-    <p class="sub">We push the rum category further across Europe: brand representation on the biggest bar shows, hands-on activations, and the trainings, masterclasses and tastings that get bartenders and retailers genuinely excited about rum.</p>
+    <span class="eyebrow">The Rumah B.V. &middot; Rotterdam &middot; Europe wide</span>
+    <h1 class="hero-title">Sugarcane spirits,<br>brought to <em>the world's bars</em>.</h1>
+    <p class="sub">The Rum Quarter is how The Rumah turns years behind the bar into a platform for rum, cachaça and agricole brands: shared representation on the continent's biggest trade shows, hands-on activations from Rotterdam to Berlin to Athens, and the trainings, masterclasses, guest shifts and events that make bartenders fall in love with sugarcane spirits.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Partner with us</a>
       <a href="#what" class="btn btn-outline">See what we do</a>
@@ -284,24 +293,24 @@
         <div class="service-num">02</div>
         <div>
           <h3>Activations & Events</h3>
-          <p>Live brand work across the Netherlands and Europe. From retail tastings at the local slijterij to industry masterclasses for bartenders, guest shifts behind partner bars, and fully-produced brand events. Sugarcane spirits only, always hosted by The Rumah.</p>
+          <p>Live brand work across the Netherlands and Europe: retail tastings at the local slijterij, hands-on workshops and masterclasses for trade and consumers, guest shifts behind partner bars, brand takeovers at trade shows, and fully-produced brand events and parties. Sugarcane spirits only, always hosted by The Rumah.</p>
           <div class="tag-list">
-            <span class="tag-pill">Retail masterclasses</span>
-            <span class="tag-pill">Industry masterclasses</span>
+            <span class="tag-pill">Masterclasses & workshops</span>
             <span class="tag-pill">Guest shifts</span>
-            <span class="tag-pill">Custom brand events</span>
+            <span class="tag-pill">Trade show activations</span>
+            <span class="tag-pill">Brand events & parties</span>
           </div>
         </div>
       </div>
       <div class="service-row">
         <div class="service-num">03</div>
         <div>
-          <h3>Venue Consulting</h3>
-          <p>For bars and restaurants, across any spirit category. Cocktail menu development, staff training and recurring cocktail batch production, so your team pours a consistent, better drink without needing a rum specialist behind every shift.</p>
+          <h3>Bar & Venue Consulting</h3>
+          <p>For bars and restaurants, across any spirit category. From building a bar from scratch to cocktail menu development, staff training and recurring cocktail batch production, so your team pours a consistent, better drink without needing a rum specialist behind every shift.</p>
           <div class="tag-list">
+            <span class="tag-pill">Bar build & setup</span>
             <span class="tag-pill">Menu development</span>
             <span class="tag-pill">Staff training</span>
-            <span class="tag-pill">Cocktail batches</span>
             <span class="tag-pill">Ongoing consulting</span>
           </div>
         </div>
@@ -318,13 +327,14 @@
     <div class="brand-grid">
       <div class="brand-chip">Ron Colón Salvadoreño</div>
       <div class="brand-chip">Clairin</div>
+      <div class="brand-chip">Worthy Park</div>
+      <div class="brand-chip">Savanna</div>
+      <div class="brand-chip">Paranubes</div>
+      <div class="brand-chip">Dos Maderas</div>
       <div class="brand-chip">Black Tot Rum</div>
       <div class="brand-chip">Alibi Aged Rum</div>
       <div class="brand-chip">William George</div>
-      <div class="brand-chip">Savanna</div>
       <div class="brand-chip">Sampan</div>
-      <div class="brand-chip">Worthy Park</div>
-      <div class="brand-chip">Paranubes</div>
       <div class="brand-chip">Doorly's</div>
       <div class="brand-chip">Mates Rum</div>
       <div class="brand-chip">The Duppy Share</div>
@@ -338,26 +348,62 @@
 
 <section id="spotlight" class="spotlight-bg">
   <div class="wrap">
-    <span class="section-tag">Brand spotlight (test round)</span>
-    <h2>Two partners, in full.</h2>
-    <p class="lead">A first look at what a full brand page looks like: real background on the distillery, and a direct way to reach The Rum Quarter about that specific brand. Every partner will get one of these.</p>
+    <span class="section-tag">Our partner brands</span>
+    <h2>Meet the brands behind The Rum Quarter.</h2>
+    <p class="lead">Full transparency on who we work with: real background on each distillery, and a direct way to reach The Rum Quarter about that specific brand.</p>
     <div class="spotlight-grid">
       <div class="spotlight-card">
         <div class="origin">Jamaica</div>
         <h3>Worthy Park Estate</h3>
-        <p>Nestled 1,200 feet above sea level, Worthy Park Estate spans over 10,000 acres of sugar cane fields and forest in the heart of Jamaica. The distillery crafts its award-winning Jamaican rum, including the signature Rum-Bar Rum, using traditions dating back to 1670. Sustainability and zero-waste production are central to how the estate operates.</p>
+        <p>Nestled 1,200 feet above sea level, Worthy Park Estate spans over 10,000 acres of sugar cane fields and forest. The distillery crafts its award-winning Jamaican rum, including the signature Rum-Bar Rum, using traditions dating back to 1670, with sustainability and zero-waste production central to how the estate operates.</p>
         <div class="spotlight-links">
-          <a class="visit" href="https://worthyparkestate.com" target="_blank" rel="noopener">Visit worthyparkestate.com</a>
-          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Worthy Park Estate">Ask us about this brand</a>
+          <a class="visit" href="https://worthyparkestate.com" target="_blank" rel="noopener">Visit site</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Worthy Park Estate">Contact us</a>
         </div>
       </div>
       <div class="spotlight-card">
         <div class="origin">El Salvador</div>
         <h3>Ron Colón Salvadoreño</h3>
-        <p>RCS started as a bartender's passion project aiming to innovate the rum category. The name pays homage to the Colón, El Salvador's historic currency, retired in 2001 in favour of the US dollar. Like the old coins, rum only grows more valuable the longer it's aged, and RCS built its identity around that idea.</p>
+        <p>RCS started as a bartender's passion project aiming to innovate the rum category. The name pays homage to the Colón, El Salvador's historic currency, retired in 2001. Like the old coins, rum only grows more valuable the longer it's aged, and RCS built its identity around that idea.</p>
         <div class="spotlight-links">
-          <a class="visit" href="https://roncolon.com" target="_blank" rel="noopener">Visit roncolon.com</a>
-          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Ron Colón Salvadoreño">Ask us about this brand</a>
+          <a class="visit" href="https://roncolon.com" target="_blank" rel="noopener">Visit site</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Ron Colón Salvadoreño">Contact us</a>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="origin">Haiti</div>
+        <h3>Clairin</h3>
+        <p>Clairin is unaged, wild fermented sugarcane rum made in small batches by independent Haitian distilleries using traditional pot stills and no additives. It is less a single brand than a whole category, one of the last truly artisanal rum traditions still made exactly as it always has been.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://en.wikipedia.org/wiki/Clairin" target="_blank" rel="noopener">Learn more</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Clairin">Contact us</a>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="origin">Réunion Island</div>
+        <h3>Savanna</h3>
+        <p>Distillerie de Savanna has been producing rum at the Bois Rouge estate in Saint André, Réunion Island, for over 150 years. Its rums are shaped by volcanic sugarcane, sea spray and distilling expertise, built on precision, intensity and aromatic depth.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://www.savanna.fr" target="_blank" rel="noopener">Visit site</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Savanna">Contact us</a>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="origin">Oaxaca, Mexico</div>
+        <h3>Paranubes</h3>
+        <p>A family in Rio Tuerto, in the Sierra Mazateca region of Northern Oaxaca, has made pure cane juice rum for three generations and over 100 years. Cane from ancestral fields nearly 500 years old is hand harvested and pressed daily, then wild fermented into a true expression of Mexico's cloud forests.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://www.paranubes.com" target="_blank" rel="noopener">Visit site</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Paranubes">Contact us</a>
+        </div>
+      </div>
+      <div class="spotlight-card">
+        <div class="origin">Jerez, Spain</div>
+        <h3>Dos Maderas</h3>
+        <p>Dos Maderas is made by Bodegas Williams &amp; Humbert in Jerez, Spain, through a signature double maturation: aged first in the Caribbean, then shipped to Spain for further ageing in the same sherry casks the bodega uses for its wines.</p>
+        <div class="spotlight-links">
+          <a class="visit" href="https://dosmaderas.com" target="_blank" rel="noopener">Visit site</a>
+          <a class="contact" href="mailto:edward@therumquarter.com?subject=Interested in Dos Maderas">Contact us</a>
         </div>
       </div>
     </div>
