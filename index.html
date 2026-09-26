@@ -1,222 +1,228 @@
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root{
-  --teal:#16302f;
-  --teal-deep:#0e2120;
-  --orange:#cf5c36;
-  --cream:#f4f1ec;
-  --sand:#e8e2d7;
-  --white:#fff;
-  --ink:#16302f;
-  --muted:rgba(22,48,47,.62);
-  --line:rgba(22,48,47,.14);
-  --line-light:rgba(244,241,236,.16);
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --iron:#151614;
+  --iron-deep:#0c0d0b;
+  --concrete:#a9a396;
+  --concrete-dark:#6f6a5e;
+  --paper:#e8e3d6;
+  --paper-dim:#d8d2c1;
+  --rust:#a8451f;
+  --rust-bright:#c85a2c;
+  --brass:#8a7038;
+  --wood:#6b4128;
+  --wood-dark:#432a1a;
+  --wood-light:#8a5a35;
+  --mortar:#c9c2b0;
+  --white:#f4f1ea;
+  --ink:#151614;
+  --muted:rgba(21,22,20,.64);
+  --line:rgba(21,22,20,.18);
+  --line-light:rgba(244,241,234,.2);
+  --display:'Archivo Black',Impact,'Arial Black',sans-serif;
+  --head:'Oswald',Impact,sans-serif;
   --sans:'Inter',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
-  --ease:cubic-bezier(.22,1,.36,1);
 }
 
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
-h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:500;line-height:1.05;letter-spacing:-.01em}
+h1,h2,h3,h4{margin:0;font-family:var(--head);font-weight:600;line-height:1;letter-spacing:.01em;text-transform:uppercase}
 p{margin:0}
 ul{margin:0;padding:0;list-style:none}
 
-.rq{overflow-x:clip}
+.rq{overflow-x:clip;position:relative}
 .rq .wrap{width:min(1240px,calc(100% - 3rem));margin-inline:auto}
-.rq .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
-.rq .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
-.rq .lede{font-size:1.15rem;line-height:1.7;color:var(--muted);max-width:56ch}
-.rq .h-xl{font-size:clamp(2.8rem,6.5vw,5.6rem)}
-.rq .h-l{font-size:clamp(2.2rem,4.2vw,3.6rem)}
-.rq .h-m{font-size:clamp(1.6rem,2.4vw,2.1rem)}
-.rq .h-s{font-size:1.45rem}
-.rq em{font-style:italic;font-weight:400}
+.rq .eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--rust-bright)}
+.rq .eyebrow::before{content:"";width:22px;height:3px;background:currentColor}
+.rq .lede{font-size:1.08rem;line-height:1.7;color:var(--muted);max-width:56ch}
+.rq .h-xl{font-size:clamp(2.6rem,6.2vw,5.2rem);font-family:var(--display);letter-spacing:-.01em}
+.rq .h-l{font-size:clamp(2rem,4vw,3.1rem);font-family:var(--display)}
+.rq .h-m{font-size:1.6rem}
+.rq .h-s{font-size:1.3rem}
+.rq em{font-style:normal;color:var(--rust-bright)}
 
-/* buttons */
-.rq .btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 1.6rem;border:1px solid var(--teal);border-radius:999px;font-family:var(--sans);font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),border-color .35s var(--ease)}
-.rq .btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
-.rq .btn:hover svg{transform:translateX(4px)}
-.rq .btn-solid{background:var(--teal);color:var(--cream)}
-.rq .btn-solid:hover{background:var(--orange);border-color:var(--orange);color:var(--white)}
-.rq .btn-ghost{background:transparent;color:var(--teal)}
-.rq .btn-ghost:hover{background:var(--teal);color:var(--cream)}
-.rq .btn-orange{background:var(--orange);border-color:var(--orange);color:var(--white)}
-.rq .btn-orange:hover{background:var(--cream);color:var(--teal);border-color:var(--cream)}
-.rq .btn-light{border-color:rgba(244,241,236,.5);color:var(--cream)}
-.rq .btn-light:hover{background:var(--cream);color:var(--teal);border-color:var(--cream)}
-.rq .textlink{position:relative;display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);padding-bottom:.25rem}
-.rq .textlink::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:currentColor;transform:scaleX(.35);transform-origin:left;transition:transform .4s var(--ease)}
-.rq .textlink:hover::after{transform:scaleX(1)}
+/* concrete grain texture, reused on light and dark sections */
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.5;mix-blend-mode:multiply}
+.grain.on-dark{mix-blend-mode:overlay;opacity:.35}
+
+/* wood grain, used for the reclaimed bar top strips */
+.wood-strip{background:
+  repeating-linear-gradient(90deg,var(--wood) 0 3px,var(--wood-light) 3px 4px,var(--wood) 4px 40px),
+  linear-gradient(180deg,var(--wood-light),var(--wood-dark));
+  background-blend-mode:overlay,normal;
+  position:relative}
+.wood-strip::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.15) 0 1px,transparent 1px 40px),repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 1px,transparent 1px 3px)}
+
+/* brick pattern, used behind the spotlight and why sections */
+.brick{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(var(--mortar) 2px,transparent 2px),
+    linear-gradient(90deg,var(--mortar) 2px,transparent 2px);
+  background-size:88px 34px,88px 34px;
+  background-position:0 0,0 0}
+.brick::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(90deg,var(--mortar) 2px,transparent 2px);
+  background-size:88px 34px;background-position:44px 17px}
+.brick.on-dark{opacity:.14;filter:invert(1)}
+.brick.on-rust{opacity:.16}
+
+/* buttons: squared, stencil */
+.rq .btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.7rem;border:2px solid var(--iron);border-radius:0;font-family:var(--head);font-size:.82rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
+.rq .btn svg{width:16px;height:16px}
+.rq .btn-solid{background:var(--iron);color:var(--paper)}
+.rq .btn-solid:hover{background:var(--rust);border-color:var(--rust);color:var(--white)}
+.rq .btn-ghost{background:transparent;color:var(--iron)}
+.rq .btn-ghost:hover{background:var(--iron);color:var(--paper)}
+.rq .btn-rust{background:var(--rust);border-color:var(--rust);color:var(--white)}
+.rq .btn-rust:hover{background:var(--white);color:var(--iron);border-color:var(--white)}
+.rq .btn-light{border-color:rgba(244,241,234,.55);color:var(--white)}
+.rq .btn-light:hover{background:var(--white);color:var(--iron);border-color:var(--white)}
+.rq .textlink{position:relative;display:inline-flex;align-items:center;gap:.5rem;font-family:var(--head);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-bright);border-bottom:2px solid currentColor;padding-bottom:.2rem}
 
 /* ---------- NAV ---------- */
-.rq-nav{position:sticky;top:0;z-index:50;background:rgba(244,241,236,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.rq-nav .bar{display:flex;align-items:center;justify-content:space-between;height:78px}
-.rq-nav .logo{display:flex;align-items:center;gap:.85rem}
-.rq-nav .logo .mark{width:38px;height:38px;border-radius:50%;background:var(--teal);display:grid;place-items:center;color:var(--cream)}
-.rq-nav .logo .mark svg{width:20px;height:20px}
-.rq-nav .logo .word{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.02em;line-height:1}
-.rq-nav .logo .word small{display:block;font-family:var(--sans);font-size:.6rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
-.rq-nav .links{display:flex;align-items:center;gap:2.2rem}
-.rq-nav .links a{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;position:relative;padding:.4rem 0}
-.rq-nav .links a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
-.rq-nav .links a:hover::after{transform:scaleX(1);transform-origin:left}
-.rq-nav .links .btn{padding:.75rem 1.3rem;font-size:.74rem}
-.rq-nav .links .btn::after{display:none}
+.rq-nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:3px solid var(--iron)}
+.rq-nav .bar{display:flex;align-items:center;justify-content:space-between;height:76px}
+.rq-nav .logo{display:flex;align-items:center;gap:.9rem}
+.rq-nav .logo .mark{width:40px;height:40px;background:var(--iron);display:grid;place-items:center;color:var(--paper);flex-shrink:0}
+.rq-nav .logo .mark svg{width:22px;height:22px}
+.rq-nav .logo .word{font-family:var(--display);font-size:1.15rem;letter-spacing:.01em;line-height:1}
+.rq-nav .logo .word small{display:block;font-family:var(--sans);font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.rq-nav .links{display:flex;align-items:center;gap:2rem}
+.rq-nav .links a{font-family:var(--head);font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;position:relative;padding:.4rem 0;border-bottom:2px solid transparent}
+.rq-nav .links a:hover{border-color:var(--rust)}
+.rq-nav .links .btn{padding:.7rem 1.3rem;font-size:.72rem}
 .rq-nav .toggle{display:none}
-.rq-nav .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;cursor:pointer;place-items:center}
-.rq-nav .burger span{display:block;width:18px;height:1.5px;background:var(--teal);margin:2.5px 0;transition:transform .3s var(--ease),opacity .3s}
+.rq-nav .burger{display:none;width:44px;height:44px;border:2px solid var(--iron);cursor:pointer;place-items:center}
+.rq-nav .burger span{display:block;width:18px;height:2px;background:var(--iron);margin:2.5px 0;transition:transform .3s,opacity .3s}
 
 /* ---------- HERO ---------- */
-.rq-hero{position:relative;background:var(--teal);color:var(--cream);overflow:hidden}
-.rq-hero::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(900px 600px at 85% 20%,rgba(207,92,54,.28),transparent 60%),
-  radial-gradient(700px 500px at 5% 95%,rgba(244,241,236,.07),transparent 60%),
-  linear-gradient(180deg,var(--teal) 0%,var(--teal-deep) 100%)}
-.rq-hero::after{content:"";position:absolute;inset:0;opacity:.35;background-image:repeating-linear-gradient(115deg,transparent 0 46px,rgba(244,241,236,.035) 46px 47px)}
-.rq-hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3rem;min-height:calc(100vh - 78px);padding:6rem 0 5rem;align-items:center}
-.rq-hero .eyebrow{color:rgba(244,241,236,.7)}
-.rq-hero h1{margin:1.6rem 0 1.8rem;max-width:12ch}
-.rq-hero h1 em{color:var(--orange)}
-.rq-hero .lede{color:rgba(244,241,236,.74);font-size:1.2rem;max-width:48ch;font-weight:300}
-.rq-hero .cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.6rem}
-.rq-hero .cane{position:relative;justify-self:end;width:100%;max-width:420px;aspect-ratio:1/1.2}
-.rq-hero .cane svg{width:100%;height:100%}
-.rq-hero .stats{position:relative;z-index:2;border-top:1px solid var(--line-light)}
+.rq-hero{position:relative;background:var(--iron);color:var(--paper);overflow:hidden;border-bottom:6px solid var(--rust)}
+.rq-hero .bg{position:absolute;inset:0;background:
+  linear-gradient(180deg,var(--iron) 0%,var(--iron-deep) 100%)}
+.rq-hero .planks{position:absolute;inset:0;opacity:.5;background-image:repeating-linear-gradient(90deg,rgba(244,241,234,.045) 0 2px,transparent 2px 96px),repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 1px,transparent 1px 5px)}
+.rq-hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3rem;min-height:calc(100vh - 76px);padding:5.5rem 0 4.5rem;align-items:center}
+.rq-hero .eyebrow{color:var(--rust-bright)}
+.rq-hero h1{margin:1.5rem 0 1.7rem;max-width:13ch;font-size:clamp(2.6rem,6vw,5rem)}
+.rq-hero .lede{color:rgba(244,241,234,.72);font-size:1.15rem;max-width:48ch;font-weight:300}
+.rq-hero .cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
+.rq-hero .rig{position:relative;justify-self:end;width:100%;max-width:380px;aspect-ratio:3/4}
+.rq-hero .rig svg{width:100%;height:100%}
+.rq-hero .stats{position:relative;z-index:2;border-top:3px solid var(--rust)}
+.rq-hero .stats.wood-strip .wrap{background:rgba(0,0,0,.32)}
 .rq-hero .stats .wrap{min-height:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.rq-hero .stat{padding:1.8rem 1.5rem 1.8rem 0;border-right:1px solid var(--line-light)}
+.rq-hero .stat{padding:1.7rem 1.4rem 1.7rem 0;border-right:1px solid var(--line-light)}
 .rq-hero .stat:last-child{border-right:none}
-.rq-hero .stat:not(:first-child){padding-left:1.5rem}
-.rq-hero .stat b{display:block;font-family:var(--serif);font-weight:500;font-size:2.4rem;line-height:1;color:var(--cream)}
-.rq-hero .stat span{display:block;margin-top:.5rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,236,.6)}
+.rq-hero .stat:not(:first-child){padding-left:1.4rem}
+.rq-hero .stat b{display:block;font-family:var(--display);font-size:2.1rem;line-height:1;color:var(--paper)}
+.rq-hero .stat span{display:block;margin-top:.5rem;font-family:var(--head);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,234,.58)}
 
-/* ---------- DIVIDER ---------- */
-.rq-divider{line-height:0;background:var(--cream)}
-.rq-divider.on-teal{background:var(--teal)}
-.rq-divider svg{width:100%;height:auto}
+/* ---------- straight rivet divider (replaces the old wave) ---------- */
+.rq-seam{position:relative;height:14px;background:var(--paper)}
+.rq-seam.on-dark{background:var(--iron)}
+.rq-seam::before{content:"";position:absolute;left:0;right:0;top:6px;height:3px;background:var(--rust)}
+.rq-seam::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(21,22,20,.4) 1.5px,transparent 1.6px);background-size:34px 14px;background-position:17px 4px}
+.rq-seam.on-dark::after{background-image:radial-gradient(circle,rgba(244,241,234,.35) 1.5px,transparent 1.6px)}
 
 /* ---------- PILLARS ---------- */
-.rq-pillars{padding:7rem 0 6rem}
-.rq-pillars .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:3rem;align-items:end;margin-bottom:4.5rem}
-.rq-pillars .head h2{margin-top:1.2rem}
-.rq-pillars .grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
-.rq-pillars .pillar{padding:2.6rem 1.8rem 2.8rem 0;border-right:1px solid var(--line);position:relative;transition:transform .5s var(--ease)}
-.rq-pillars .pillar:not(:first-child){padding-left:1.8rem}
+.rq-pillars{padding:6rem 0 5.5rem;background:var(--paper);position:relative}
+.rq-pillars .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:3rem;align-items:end;margin-bottom:4rem}
+.rq-pillars .head h2{margin-top:1.1rem}
+.rq-pillars .grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--iron)}
+.rq-pillars .pillar{padding:2.4rem 1.7rem 2.6rem 0;border-right:1px solid var(--line);position:relative}
+.rq-pillars .pillar:not(:first-child){padding-left:1.7rem}
 .rq-pillars .pillar:last-child{border-right:none}
-.rq-pillars .pillar .num{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--orange);display:block;margin-bottom:2.8rem}
-.rq-pillars .pillar h3{font-size:2rem;margin-bottom:1rem;position:relative;display:inline-block}
-.rq-pillars .pillar h3::after{content:"";position:absolute;left:0;bottom:-.35rem;width:100%;height:1px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-.rq-pillars .pillar:hover h3::after{transform:scaleX(1)}
-.rq-pillars .pillar:hover{transform:translateY(-4px)}
-.rq-pillars .pillar p{color:var(--muted);font-size:.98rem}
+.rq-pillars .pillar .num{font-family:var(--display);font-size:.95rem;color:var(--rust);display:block;margin-bottom:2.4rem}
+.rq-pillars .pillar h3{font-size:1.5rem;margin-bottom:.9rem}
+.rq-pillars .pillar p{color:var(--muted);font-size:.96rem}
 
 /* ---------- SERVICES ---------- */
-.rq-services{background:var(--sand);padding:7rem 0}
-.rq-services .head{max-width:60ch;margin-bottom:4rem}
-.rq-services .head h2{margin-top:1.2rem}
-.rq-services .list{border-top:1px solid var(--line)}
-.rq-services .svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,4fr) minmax(0,7fr);gap:2.5rem;padding:3rem 0;border-bottom:1px solid var(--line);align-items:start;transition:background .4s var(--ease)}
-.rq-services .svc .idx{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--orange);padding-top:.3rem}
-.rq-services .svc h3{font-size:2.2rem;line-height:1.05}
-.rq-services .svc h3 small{display:block;margin-top:.7rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.rq-services .svc p{color:rgba(22,48,47,.78);font-size:1.02rem;max-width:62ch}
-.rq-services .svc .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
-.rq-services .svc .tags li{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.45rem .85rem;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.5);transition:background .3s,color .3s,border-color .3s}
-.rq-services .svc:hover .tags li{border-color:var(--teal)}
-.rq-services .svc .tags li:hover{background:var(--teal);color:var(--cream);border-color:var(--teal)}
+.rq-services{background:var(--iron);color:var(--paper);padding:6rem 0;position:relative;border-top:6px solid var(--rust);border-bottom:6px solid var(--rust)}
+.rq-services .head{max-width:60ch;margin-bottom:3.5rem}
+.rq-services .head h2{margin-top:1.1rem}
+.rq-services .head .lede{color:rgba(244,241,234,.68)}
+.rq-services .list{border-top:1px solid var(--line-light)}
+.rq-services .svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,4fr) minmax(0,7fr);gap:2.4rem;padding:2.8rem 0;border-bottom:1px solid var(--line-light);align-items:start}
+.rq-services .svc .idx{font-family:var(--display);font-size:1.15rem;color:var(--rust-bright);padding-top:.2rem}
+.rq-services .svc h3{font-size:1.9rem;line-height:1.1;color:var(--white)}
+.rq-services .svc h3 small{display:block;margin-top:.6rem;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,241,234,.5)}
+.rq-services .svc p{color:rgba(244,241,234,.72);font-size:1rem;max-width:62ch}
+.rq-services .svc .tags{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.3rem}
+.rq-services .svc .tags li{font-family:var(--head);font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:.5rem .9rem;border:1px solid rgba(244,241,234,.35);color:rgba(244,241,234,.85)}
 
 /* ---------- BRAND WALL ---------- */
-.rq-wall{padding:7rem 0 6rem}
-.rq-wall .head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3.5rem}
-.rq-wall .head h2{margin-top:1.2rem}
+.rq-wall{padding:6rem 0 5.5rem;background:var(--paper)}
+.rq-wall .head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3.2rem}
+.rq-wall .head h2{margin-top:1.1rem}
 .rq-wall .head p{max-width:34ch;text-align:right}
-.rq-wall .names{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.rq-wall .names li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.2rem 1.4rem;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-size:1.5rem;font-weight:500;letter-spacing:.01em;position:relative;overflow:hidden;transition:color .4s var(--ease)}
-.rq-wall .names li::before{content:"";position:absolute;inset:0;background:var(--teal);transform:translateY(100%);transition:transform .5s var(--ease)}
-.rq-wall .names li span{position:relative;z-index:1}
-.rq-wall .names li:hover{color:var(--cream)}
-.rq-wall .names li:hover::before{transform:translateY(0)}
-.rq-wall .names li.accent{background:var(--orange);color:var(--white);font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
-.rq-wall .names li.accent::before{display:none}
+.rq-wall .names{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:3px solid var(--iron);border-left:1px solid var(--line)}
+.rq-wall .names li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2rem 1.3rem;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--head);font-size:1.15rem;font-weight:500;text-transform:uppercase;letter-spacing:.02em;position:relative;transition:background .25s,color .25s}
+.rq-wall .names li:hover{background:var(--iron);color:var(--paper)}
+.rq-wall .names li.accent{background:var(--rust);color:var(--white);font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;font-weight:700}
 
 /* ---------- SPOTLIGHT ---------- */
-.rq-spot{background:var(--teal);color:var(--cream);padding:7rem 0;position:relative}
-.rq-spot::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 500px at 100% 0%,rgba(207,92,54,.18),transparent 60%);pointer-events:none}
+.rq-spot{background:var(--concrete-dark);color:var(--white);padding:6rem 0;position:relative;border-top:6px solid var(--iron)}
 .rq-spot .wrap{position:relative}
-.rq-spot .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3rem;align-items:end;margin-bottom:4rem}
-.rq-spot .head h2{margin-top:1.2rem}
-.rq-spot .head .lede{color:rgba(244,241,236,.7)}
-.rq-spot .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.rq-spot .card{display:flex;flex-direction:column;background:rgba(244,241,236,.04);border:1px solid var(--line-light);padding:2.2rem 2rem 2rem;position:relative;overflow:hidden;transition:transform .5s var(--ease),border-color .5s var(--ease),background .5s var(--ease)}
-.rq-spot .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
-.rq-spot .card:hover{transform:translateY(-6px);border-color:rgba(244,241,236,.32);background:rgba(244,241,236,.07)}
-.rq-spot .card:hover::before{transform:scaleX(1)}
-.rq-spot .card .origin{display:flex;align-items:center;gap:.6rem;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1.4rem}
-.rq-spot .card .origin::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
-.rq-spot .card h3{font-size:2rem;line-height:1;margin-bottom:1.1rem}
-.rq-spot .card p{color:rgba(244,241,236,.72);font-size:.95rem;flex:1}
-.rq-spot .card .acts{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--line-light)}
-.rq-spot .card .acts a{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:.45rem}
-.rq-spot .card .acts a svg{width:14px;height:14px;transition:transform .35s var(--ease)}
-.rq-spot .card .acts a:hover svg{transform:translate(2px,-2px)}
-.rq-spot .card .acts .visit{color:var(--cream)}
-.rq-spot .card .acts .mail{color:var(--orange)}
+.rq-spot .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:3rem;align-items:end;margin-bottom:3.6rem}
+.rq-spot .head h2{margin-top:1.1rem}
+.rq-spot .head .lede{color:rgba(244,241,234,.7)}
+.rq-spot .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,.25)}
+.rq-spot .card{display:flex;flex-direction:column;background:var(--iron);padding:2.1rem 1.9rem 1.9rem;position:relative}
+.rq-spot .card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--rust)}
+.rq-spot .card .origin{display:flex;align-items:center;gap:.6rem;font-family:var(--head);font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--rust-bright);margin-bottom:1.3rem}
+.rq-spot .card .origin::before{content:"";width:8px;height:8px;background:var(--rust-bright)}
+.rq-spot .card h3{font-size:1.5rem;line-height:1.05;margin-bottom:1rem;color:var(--white)}
+.rq-spot .card p{color:rgba(244,241,234,.7);font-size:.93rem;flex:1}
+.rq-spot .card .acts{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.8rem;padding-top:1.3rem;border-top:1px solid rgba(244,241,234,.18)}
+.rq-spot .card .acts a{font-family:var(--head);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:.4rem}
+.rq-spot .card .acts a svg{width:14px;height:14px}
+.rq-spot .card .acts .visit{color:var(--white)}
+.rq-spot .card .acts .mail{color:var(--rust-bright)}
 
 /* ---------- SHOWS ---------- */
-.rq-shows{padding:7rem 0}
+.rq-shows{padding:6rem 0;background:var(--paper)}
 .rq-shows .layout{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:4rem;align-items:start}
 .rq-shows .intro{position:sticky;top:110px}
-.rq-shows .intro h2{margin-top:1.2rem;margin-bottom:1.4rem}
+.rq-shows .intro h2{margin-top:1.1rem;margin-bottom:1.3rem}
 .rq-shows .intro .btn{margin-top:2rem}
-.rq-shows .rows{border-top:1px solid var(--line)}
-.rq-shows .row{display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:2rem;align-items:center;padding:2rem 0;border-bottom:1px solid var(--line);transition:padding .4s var(--ease)}
-.rq-shows .row:hover{padding-left:.6rem}
-.rq-shows .row .month{font-family:var(--serif);font-size:1.7rem;font-weight:500;color:var(--orange);line-height:1}
-.rq-shows .row .month small{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
-.rq-shows .row h3{font-size:1.9rem;line-height:1.05}
-.rq-shows .row .city{font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:.45rem}
-.rq-shows .row .pill{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.55rem 1rem;border:1px solid var(--teal);border-radius:999px;white-space:nowrap;transition:background .3s,color .3s}
-.rq-shows .row:hover .pill{background:var(--teal);color:var(--cream)}
+.rq-shows .rows{border-top:3px solid var(--iron)}
+.rq-shows .row{display:grid;grid-template-columns:130px minmax(0,1fr) auto;gap:2rem;align-items:center;padding:1.9rem 0;border-bottom:1px solid var(--line)}
+.rq-shows .row .month{font-family:var(--display);font-size:1.4rem;color:var(--rust);line-height:1}
+.rq-shows .row .month small{display:block;font-family:var(--sans);font-size:.64rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.rq-shows .row h3{font-size:1.6rem;line-height:1.05}
+.rq-shows .row .city{font-family:var(--sans);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+.rq-shows .row .pill{font-family:var(--head);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.5rem .95rem;border:2px solid var(--iron);white-space:nowrap}
 
 /* ---------- WHY ---------- */
-.rq-why{background:var(--sand);padding:7rem 0;position:relative;overflow:hidden}
-.rq-why .deco{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:420px;opacity:.12;pointer-events:none}
+.rq-why{background:var(--iron);color:var(--paper);padding:6rem 0;position:relative;border-top:6px solid var(--rust)}
 .rq-why .wrap{position:relative}
-.rq-why .head{max-width:60ch;margin-bottom:4rem}
-.rq-why .head h2{margin-top:1.2rem}
-.rq-why .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
-.rq-why .reason{background:var(--white);padding:2.4rem 2.2rem;border:1px solid transparent;transition:transform .5s var(--ease),border-color .5s var(--ease),box-shadow .5s var(--ease)}
-.rq-why .reason:hover{transform:translateY(-5px);border-color:var(--line);box-shadow:0 30px 60px -30px rgba(22,48,47,.35)}
-.rq-why .reason .ico{width:44px;height:44px;border-radius:50%;background:var(--cream);display:grid;place-items:center;margin-bottom:1.8rem;color:var(--orange)}
+.rq-why .head{max-width:60ch;margin-bottom:3.6rem}
+.rq-why .head h2{margin-top:1.1rem}
+.rq-why .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(244,241,234,.15)}
+.rq-why .reason{background:var(--iron-deep);padding:2.2rem 2rem}
+.rq-why .reason .ico{width:42px;height:42px;background:rgba(244,241,234,.08);display:grid;place-items:center;margin-bottom:1.6rem;color:var(--rust-bright);border:1px solid rgba(244,241,234,.2)}
 .rq-why .reason .ico svg{width:20px;height:20px}
-.rq-why .reason h3{font-size:1.6rem;margin-bottom:.8rem}
-.rq-why .reason p{color:var(--muted);font-size:.96rem}
-.rq-why .quote{margin-top:4rem;padding:3.2rem 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,2fr) minmax(0,10fr);gap:2rem;align-items:start}
-.rq-why .quote .mark{font-family:var(--serif);font-size:6rem;line-height:.6;color:var(--orange)}
-.rq-why .quote p{font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.35;font-style:italic;max-width:30ch}
-.rq-why .quote cite{display:block;margin-top:1.2rem;font-family:var(--sans);font-style:normal;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.rq-why .reason h3{font-size:1.25rem;margin-bottom:.7rem;color:var(--white)}
+.rq-why .reason p{color:rgba(244,241,234,.68);font-size:.94rem}
 
 /* ---------- CONTACT ---------- */
-.rq-contact{background:var(--teal);color:var(--cream);padding:7rem 0 5rem;position:relative;overflow:hidden}
-.rq-contact::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 500px at 10% 100%,rgba(207,92,54,.22),transparent 60%);pointer-events:none}
+.rq-contact{background:var(--rust);color:var(--white);padding:6rem 0 4.5rem;position:relative;overflow:hidden}
+.rq-contact .planks{position:absolute;inset:0;opacity:.12;background-image:repeating-linear-gradient(90deg,rgba(0,0,0,.4) 0 2px,transparent 2px 110px)}
 .rq-contact .wrap{position:relative}
 .rq-contact .layout{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:4rem;align-items:start}
-.rq-contact h2{margin:1.2rem 0 1.4rem;max-width:14ch}
-.rq-contact h2 em{color:var(--orange)}
-.rq-contact .lede{color:rgba(244,241,236,.7)}
-.rq-contact .mail{display:inline-block;margin-top:2.4rem;font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:500;position:relative;padding-bottom:.4rem}
-.rq-contact .mail::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--orange);transform:scaleX(.3);transform-origin:left;transition:transform .5s var(--ease)}
-.rq-contact .mail:hover::after{transform:scaleX(1)}
-.rq-contact .details{border-left:1px solid var(--line-light);padding-left:2.5rem;display:grid;gap:2.2rem}
-.rq-contact .details h4{font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:.7rem}
-.rq-contact .details p{color:rgba(244,241,236,.85);font-size:1.02rem}
-.rq-contact .details .founder{font-family:var(--serif);font-size:1.5rem;font-weight:500;color:var(--cream)}
-.rq-contact .details .founder small{display:block;font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,241,236,.55);margin-top:.2rem}
-.rq-contact .foot{margin-top:5rem;padding-top:1.8rem;border-top:1px solid var(--line-light);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,241,236,.5)}
+.rq-contact .eyebrow{color:var(--iron)}
+.rq-contact h2{margin:1.1rem 0 1.3rem;max-width:14ch;color:var(--iron)}
+.rq-contact .lede{color:rgba(21,22,20,.72)}
+.rq-contact .mail{display:inline-block;margin-top:2.2rem;font-family:var(--display);font-size:clamp(1.3rem,2.6vw,2rem);color:var(--iron);border-bottom:3px solid var(--iron);padding-bottom:.3rem}
+.rq-contact .details{border-left:3px solid var(--iron);padding-left:2.4rem;display:grid;gap:2rem}
+.rq-contact .details h4{font-family:var(--head);font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--iron);margin-bottom:.6rem}
+.rq-contact .details p{color:rgba(21,22,20,.85);font-size:1rem}
+.rq-contact .details .founder{font-family:var(--head);font-size:1.2rem;font-weight:500;color:var(--iron);text-transform:uppercase;letter-spacing:.02em}
+.rq-contact .details .founder small{display:block;font-family:var(--sans);font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(21,22,20,.55);margin-top:.2rem}
+.rq-contact .foot{margin-top:4.5rem;padding-top:1.7rem;border-top:2px solid rgba(21,22,20,.3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-family:var(--head);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(21,22,20,.7)}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:1100px){
@@ -229,57 +235,53 @@ ul{margin:0;padding:0;list-style:none}
 }
 @media (max-width:860px){
   .rq .wrap{width:min(1240px,calc(100% - 2.4rem))}
-  .rq-nav .bar{height:68px}
+  .rq-nav .bar{height:66px}
   .rq-nav .burger{display:grid}
-  .rq-nav .links{position:absolute;left:0;right:0;top:68px;flex-direction:column;align-items:flex-start;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:.6rem 1.2rem 1.4rem;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease),transform .3s var(--ease)}
-  .rq-nav .links a{padding:.9rem 0;width:100%;border-bottom:1px solid var(--line);font-size:.9rem}
-  .rq-nav .links a::after{display:none}
-  .rq-nav .links .btn{margin-top:1rem;width:auto;border-bottom:1px solid var(--teal)}
+  .rq-nav .links{position:absolute;left:0;right:0;top:66px;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:3px solid var(--iron);padding:.6rem 1.2rem 1.4rem;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+  .rq-nav .links a{padding:.9rem 0;width:100%;border-bottom:1px solid var(--line);font-size:.85rem}
+  .rq-nav .links .btn{margin-top:1rem;width:auto}
   .rq-nav .toggle:checked ~ .links{opacity:1;transform:none;pointer-events:auto}
-  .rq-nav .toggle:checked ~ .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+  .rq-nav .toggle:checked ~ .burger span:nth-child(1){transform:translateY(4.5px) rotate(45deg)}
   .rq-nav .toggle:checked ~ .burger span:nth-child(2){opacity:0}
-  .rq-nav .toggle:checked ~ .burger span:nth-child(3){transform:translateY(-4px) rotate(-45deg)}
-  .rq-hero .wrap{grid-template-columns:1fr;min-height:0;padding:4.5rem 0 3.5rem}
-  .rq-hero .cane{justify-self:center;max-width:260px;order:-1;margin-bottom:.5rem}
+  .rq-nav .toggle:checked ~ .burger span:nth-child(3){transform:translateY(-4.5px) rotate(-45deg)}
+  .rq-hero .wrap{grid-template-columns:1fr;min-height:0;padding:4rem 0 3rem}
+  .rq-hero .rig{justify-self:center;max-width:240px;order:-1;margin-bottom:.5rem}
   .rq-hero .stats .wrap{grid-template-columns:repeat(2,1fr);padding:0}
-  .rq-hero .stat{padding:1.4rem 1rem 1.4rem 0}
+  .rq-hero .stat{padding:1.3rem 1rem 1.3rem 0}
   .rq-hero .stat:nth-child(2n){border-right:none}
   .rq-hero .stat:nth-child(n+3){border-top:1px solid var(--line-light)}
   .rq-hero .stat:nth-child(3){padding-left:0}
-  .rq-pillars,.rq-services,.rq-wall,.rq-spot,.rq-shows,.rq-why,.rq-contact{padding:4.5rem 0}
-  .rq-pillars .head,.rq-spot .head,.rq-shows .layout,.rq-contact .layout{grid-template-columns:1fr;gap:2rem}
+  .rq-pillars,.rq-services,.rq-wall,.rq-spot,.rq-shows,.rq-why,.rq-contact{padding:4rem 0}
+  .rq-pillars .head,.rq-spot .head,.rq-shows .layout,.rq-contact .layout{grid-template-columns:1fr;gap:1.8rem}
   .rq-pillars .grid{grid-template-columns:1fr}
   .rq-pillars .pillar{border-right:none;padding-left:0 !important;padding-right:0;border-top:1px solid var(--line)}
   .rq-pillars .pillar:first-child{border-top:none}
-  .rq-pillars .pillar .num{margin-bottom:1.4rem}
-  .rq-services .svc{grid-template-columns:1fr;gap:1rem;padding:2.2rem 0}
+  .rq-services .svc{grid-template-columns:1fr;gap:1rem;padding:2rem 0}
   .rq-services .svc .idx{padding:0}
   .rq-wall .head{flex-direction:column;align-items:flex-start}
   .rq-wall .head p{text-align:left}
   .rq-wall .names{grid-template-columns:repeat(2,1fr)}
-  .rq-wall .names li{padding:1.6rem 1rem;font-size:1.25rem}
+  .rq-wall .names li{padding:1.5rem 1rem;font-size:1rem}
   .rq-spot .cards,.rq-why .grid{grid-template-columns:1fr}
   .rq-shows .intro{position:static}
-  .rq-shows .row{grid-template-columns:1fr;gap:.6rem;padding:1.6rem 0}
+  .rq-shows .row{grid-template-columns:1fr;gap:.6rem;padding:1.5rem 0}
   .rq-shows .row .pill{justify-self:start;margin-top:.4rem}
-  .rq-why .deco{display:none}
-  .rq-why .quote{grid-template-columns:1fr;gap:.5rem}
-  .rq-why .quote .mark{font-size:4rem}
-  .rq-contact .details{border-left:none;padding-left:0;border-top:1px solid var(--line-light);padding-top:2.5rem}
-}
-@media (prefers-reduced-motion:reduce){
-  .rq *{transition:none !important}
+  .rq-contact .details{border-left:none;padding-left:0;border-top:2px solid rgba(21,22,20,.3);padding-top:2.2rem}
 }
 </style>
 
 <div class="rq">
+
+<svg width="0" height="0" style="position:absolute">
+  <filter id="rqNoise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/></filter>
+</svg>
 
 <!-- ================= NAV ================= -->
 <header class="rq-nav">
   <div class="wrap bar">
     <a class="logo" href="#top" aria-label="The Rum Quarter home">
       <span class="mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 22V6"/><path d="M12 10c-3 0-5-2-6-5 3 0 5 1 6 5z"/><path d="M12 14c3 0 5-2 6-5-3 0-5 1-6 5z"/><path d="M9 6.5h6"/><path d="M9.5 12h5"/><path d="M9.5 17.5h5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><rect x="7" y="4" width="10" height="16" rx="1"/><path d="M7 9h10"/><path d="M7 15h10"/></svg>
       </span>
       <span class="word">The Rum Quarter<small>by The Rumah, Rotterdam</small></span>
     </a>
@@ -298,45 +300,41 @@ ul{margin:0;padding:0;list-style:none}
 
 <!-- ================= HERO ================= -->
 <section class="rq-hero" id="top">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="planks" aria-hidden="true"></div>
+  <div class="grain on-dark" style="filter:url(#rqNoise)" aria-hidden="true"></div>
   <div class="wrap">
     <div>
       <span class="eyebrow">Rotterdam, The Netherlands</span>
-      <h1 class="h-xl">Where rum brands meet the people who <em>pour</em> them.</h1>
+      <h1>Where rum brands meet the people who <em>pour</em> them.</h1>
       <p class="lede">The Rum Quarter is the brand platform of The Rumah, a Rotterdam cocktail bar with a long standing love for cane spirits. We train bartenders, activate brands across Europe's bar shows, represent producers we believe in and connect them with the trade.</p>
       <div class="cta">
-        <a class="btn btn-orange" href="#contact">Work with us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-rust" href="#contact">Work with us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
         <a class="btn btn-light" href="#spotlight">Meet the brands</a>
       </div>
     </div>
-    <div class="cane" aria-hidden="true">
-      <svg viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="rqStalk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f1ec" stop-opacity=".9"/><stop offset="1" stop-color="#f4f1ec" stop-opacity=".25"/></linearGradient>
-          <linearGradient id="rqLeaf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cf5c36"/><stop offset="1" stop-color="#cf5c36" stop-opacity=".45"/></linearGradient>
-        </defs>
-        <circle cx="200" cy="230" r="170" stroke="#f4f1ec" stroke-opacity=".12" stroke-width="1"/>
-        <circle cx="200" cy="230" r="120" stroke="#cf5c36" stroke-opacity=".28" stroke-width="1" stroke-dasharray="2 8"/>
-        <path d="M150 470 C152 380 148 300 156 200 C160 150 164 110 170 60" stroke="url(#rqStalk)" stroke-width="7" stroke-linecap="round"/>
-        <g stroke="#16302f" stroke-width="2.2" stroke-linecap="round" opacity=".9">
-          <path d="M147 410h12"/><path d="M148 350h12"/><path d="M151 290h12"/><path d="M155 230h12"/><path d="M159 170h12"/><path d="M163 115h12"/>
-        </g>
-        <path d="M245 470 C240 390 250 320 244 240 C240 190 232 130 226 70" stroke="url(#rqStalk)" stroke-width="7" stroke-linecap="round"/>
-        <g stroke="#16302f" stroke-width="2.2" stroke-linecap="round" opacity=".9">
-          <path d="M239 420h12"/><path d="M243 360h12"/><path d="M243 300h12"/><path d="M238 240h12"/><path d="M233 180h12"/><path d="M227 125h12"/>
-        </g>
-        <path d="M200 470 C202 420 198 360 204 300 C207 260 210 220 214 180" stroke="#f4f1ec" stroke-opacity=".35" stroke-width="5" stroke-linecap="round"/>
-        <path d="M170 60 C120 40 80 60 40 110 C100 105 140 90 170 60Z" fill="url(#rqLeaf)"/>
-        <path d="M170 60 C210 20 260 20 300 40 C260 60 220 75 170 60Z" fill="#cf5c36" opacity=".75"/>
-        <path d="M226 70 C260 30 310 25 350 45 C310 70 270 85 226 70Z" fill="url(#rqLeaf)"/>
-        <path d="M226 70 C190 40 150 45 120 75 C160 80 200 85 226 70Z" fill="#cf5c36" opacity=".5"/>
-        <path d="M164 120 C120 105 90 120 60 160 C110 150 140 140 164 120Z" fill="#cf5c36" opacity=".38"/>
-        <path d="M233 180 C270 150 310 150 340 175 C300 190 265 195 233 180Z" fill="#cf5c36" opacity=".38"/>
-        <path d="M214 180 C240 140 280 130 320 145 C280 165 250 178 214 180Z" fill="#f4f1ec" opacity=".2"/>
-        <path d="M40 470h320" stroke="#f4f1ec" stroke-opacity=".25" stroke-width="1"/>
+    <div class="rig" aria-hidden="true">
+      <svg viewBox="0 0 320 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="260" width="280" height="140" fill="none" stroke="#e8e3d6" stroke-opacity=".3" stroke-width="2"/>
+        <rect x="40" y="280" width="60" height="100" fill="none" stroke="#e8e3d6" stroke-opacity=".55" stroke-width="2"/>
+        <ellipse cx="70" cy="280" rx="30" ry="9" fill="none" stroke="#e8e3d6" stroke-opacity=".6" stroke-width="2"/>
+        <rect x="70" y="260" width="70" height="120" fill="none" stroke="#c85a2c" stroke-width="2.5"/>
+        <ellipse cx="105" cy="260" rx="35" ry="10" fill="none" stroke="#c85a2c" stroke-width="2.5"/>
+        <rect x="150" y="300" width="60" height="80" fill="none" stroke="#e8e3d6" stroke-opacity=".4" stroke-width="2"/>
+        <ellipse cx="180" cy="300" rx="30" ry="9" fill="none" stroke="#e8e3d6" stroke-opacity=".5" stroke-width="2"/>
+        <rect x="220" y="270" width="55" height="110" fill="none" stroke="#e8e3d6" stroke-opacity=".55" stroke-width="2"/>
+        <ellipse cx="247" cy="270" rx="27" ry="8" fill="none" stroke="#e8e3d6" stroke-opacity=".6" stroke-width="2"/>
+        <line x1="70" y1="300" x2="140" y2="300" stroke="#e8e3d6" stroke-opacity=".3" stroke-width="1"/>
+        <line x1="70" y1="340" x2="140" y2="340" stroke="#e8e3d6" stroke-opacity=".3" stroke-width="1"/>
+        <path d="M60 240 L110 240 L130 100 L150 100 L150 60 L140 60 L140 40 L120 40 L120 60 L110 60 L110 100 L90 100 Z" fill="none" stroke="#e8e3d6" stroke-width="2.5"/>
+        <circle cx="130" cy="70" r="5" fill="none" stroke="#c85a2c" stroke-width="2"/>
+        <path d="M150 100 L210 100 L210 130 L150 130" fill="none" stroke="#e8e3d6" stroke-opacity=".55" stroke-width="2"/>
+        <line x1="20" y1="400" x2="300" y2="400" stroke="#c85a2c" stroke-width="3"/>
+        <line x1="20" y1="410" x2="300" y2="410" stroke="#e8e3d6" stroke-opacity=".25" stroke-width="1"/>
       </svg>
     </div>
   </div>
-  <div class="stats">
+  <div class="stats wood-strip">
     <div class="wrap">
       <div class="stat"><b>4</b><span>Bar shows each year</span></div>
       <div class="stat"><b>15+</b><span>Brands represented</span></div>
@@ -346,12 +344,7 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<div class="rq-divider on-teal" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h1440v30c-120 40-240 60-360 46S840 20 720 40 480 90 360 76 120 30 0 46z" fill="#f4f1ec"/>
-    <path d="M0 46c120-16 240 16 360 30S600 60 720 40s240-6 360 36 240-26 360-46" fill="none" stroke="#cf5c36" stroke-width="1.2" stroke-opacity=".7"/>
-  </svg>
-</div>
+<div class="rq-seam on-dark" aria-hidden="true"></div>
 
 <!-- ================= WHAT WE DO ================= -->
 <section class="rq-pillars" id="what">
@@ -365,22 +358,22 @@ ul{margin:0;padding:0;list-style:none}
     </div>
     <div class="grid">
       <article class="pillar">
-        <span class="num">No. 01</span>
+        <span class="num">01</span>
         <h3>Train</h3>
         <p>Masterclasses and workshops that turn bar teams into confident, curious ambassadors for your rum.</p>
       </article>
       <article class="pillar">
-        <span class="num">No. 02</span>
+        <span class="num">02</span>
         <h3>Activate</h3>
         <p>Guest shifts, trade show stands and brand parties that put your bottle in the hands of the right people.</p>
       </article>
       <article class="pillar">
-        <span class="num">No. 03</span>
+        <span class="num">03</span>
         <h3>Represent</h3>
         <p>An honest voice for your brand in the Dutch and European on trade, from bar owners to buyers.</p>
       </article>
       <article class="pillar">
-        <span class="num">No. 04</span>
+        <span class="num">04</span>
         <h3>Connect</h3>
         <p>An open door to a network of bartenders, venues, distributors and fellow producers across the continent.</p>
       </article>
@@ -390,6 +383,7 @@ ul{margin:0;padding:0;list-style:none}
 
 <!-- ================= SERVICES ================= -->
 <section class="rq-services" id="services">
+  <div class="grain on-dark" style="filter:url(#rqNoise)" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Services</span>
@@ -397,7 +391,7 @@ ul{margin:0;padding:0;list-style:none}
     </div>
     <div class="list">
       <article class="svc">
-        <div class="idx">i.</div>
+        <div class="idx">01</div>
         <h3>Brand Support<small>Education and advocacy</small></h3>
         <div>
           <p>We put your rum in front of the trade in the way it deserves to be tasted. Masterclasses for bar teams, hands on workshops on cane spirits and cocktail technique, and guest shifts at venues that matter. We speak the language of the people who sell your bottle every night, and we bring the same care to a five person team as to a full room.</p>
@@ -405,7 +399,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
       <article class="svc">
-        <div class="idx">ii.</div>
+        <div class="idx">02</div>
         <h3>Activations &amp; Events<small>Presence with personality</small></h3>
         <div>
           <p>From trade show activations at Europe's leading bar shows to brand events and parties that people still talk about weeks later. We design, staff and host the moment so your brand shows up with the warmth of a great bar rather than the polish of a booth. Tastings, launches, takeovers and everything in between.</p>
@@ -413,7 +407,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
       <article class="svc">
-        <div class="idx">iii.</div>
+        <div class="idx">03</div>
         <h3>Bar &amp; Venue Consulting<small>From concept to opening night</small></h3>
         <div>
           <p>Building bars from scratch is where we started, and we still love it. Concept, menu, back bar curation, training and operations, shaped by years of running our own room in Rotterdam. Whether you are opening a new venue or reworking an existing one, we help you build something guests want to return to.</p>
@@ -457,15 +451,11 @@ ul{margin:0;padding:0;list-style:none}
   </div>
 </section>
 
-<div class="rq-divider" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 90h1440V60c-120-40-240-60-360-46S840 70 720 50 480 0 360 14 120 60 0 44z" fill="#16302f"/>
-    <path d="M0 44c120 16 240-16 360-30S600 30 720 50s240 6 360-36 240 26 360 46" fill="none" stroke="#cf5c36" stroke-width="1.2" stroke-opacity=".7"/>
-  </svg>
-</div>
+<div class="rq-seam" aria-hidden="true"></div>
 
 <!-- ================= SPOTLIGHT ================= -->
 <section class="rq-spot" id="spotlight">
+  <div class="brick on-dark" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head">
       <div>
@@ -481,7 +471,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Worthy Park Estate</h3>
         <p>Nestled 1200 feet above sea level, Worthy Park spans over 10000 acres of sugar cane fields and forest. The estate produces award winning Jamaican rum, including its signature Rum-Bar Rum, with traditions dating back to 1670. Sustainability and zero waste production sit at the heart of everything the estate does.</p>
         <div class="acts">
-          <a class="visit" href="https://worthyparkestate.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://worthyparkestate.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Worthy%20Park%20Estate">Contact us</a>
         </div>
       </article>
@@ -491,7 +481,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Ron Colón Salvadoreño</h3>
         <p>RCS started as a bartender's passion project with one aim: to innovate the rum category. The name pays homage to the Colón, El Salvador's historic currency retired in 2001. Like old coins, rum grows more valuable the longer it is aged.</p>
         <div class="acts">
-          <a class="visit" href="https://roncolon.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://roncolon.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Ron%20Col%C3%B3n%20Salvadore%C3%B1o">Contact us</a>
         </div>
       </article>
@@ -501,7 +491,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Clairin</h3>
         <p>Unaged, wild fermented sugarcane rum made in small batches by independent Haitian distilleries using traditional pot stills and no additives. Clairin is less a single brand than a whole category, and one of the last truly artisanal rum traditions left in the world.</p>
         <div class="acts">
-          <a class="visit" href="https://en.wikipedia.org/wiki/Clairin" target="_blank" rel="noopener">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://en.wikipedia.org/wiki/Clairin" target="_blank" rel="noopener">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Clairin">Contact us</a>
         </div>
       </article>
@@ -511,7 +501,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Savanna</h3>
         <p>Distillerie de Savanna has produced rum at the Bois Rouge estate in Saint André for over 150 years. Its rums are shaped by volcanic sugarcane, sea spray and generations of distilling expertise, and are known for precision, intensity and remarkable aromatic depth.</p>
         <div class="acts">
-          <a class="visit" href="https://www.savanna.fr" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://www.savanna.fr" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Savanna">Contact us</a>
         </div>
       </article>
@@ -521,7 +511,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Paranubes</h3>
         <p>In Rio Tuerto, in the Sierra Mazateca region of Northern Oaxaca, one family has made pure cane juice rum for three generations and over 100 years. Cane from ancestral fields nearly 500 years old is hand harvested and pressed daily, then wild fermented. A true expression of Mexico's cloud forests.</p>
         <div class="acts">
-          <a class="visit" href="https://www.paranubes.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://www.paranubes.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Paranubes">Contact us</a>
         </div>
       </article>
@@ -531,7 +521,7 @@ ul{margin:0;padding:0;list-style:none}
         <h3>Dos Maderas</h3>
         <p>Made by Bodegas Williams and Humbert in Jerez through a signature double maturation. The rum is aged first in the Caribbean, then shipped to Spain for further ageing in the same sherry casks the bodega uses for its wines.</p>
         <div class="acts">
-          <a class="visit" href="https://dosmaderas.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="visit" href="https://dosmaderas.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Dos%20Maderas">Contact us</a>
         </div>
       </article>
@@ -539,13 +529,6 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </div>
 </section>
-
-<div class="rq-divider on-teal" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h1440v30c-120 40-240 60-360 46S840 20 720 40 480 90 360 76 120 30 0 46z" fill="#f4f1ec"/>
-    <path d="M0 46c120-16 240 16 360 30S600 60 720 40s240-6 360 36 240-26 360-46" fill="none" stroke="#cf5c36" stroke-width="1.2" stroke-opacity=".7"/>
-  </svg>
-</div>
 
 <!-- ================= BAR SHOWS ================= -->
 <section class="rq-shows" id="shows">
@@ -555,7 +538,7 @@ ul{margin:0;padding:0;list-style:none}
         <span class="eyebrow">Upcoming bar shows</span>
         <h2 class="h-l">Where you will find us this year.</h2>
         <p class="lede">Four shows, four cities, one team that knows the floor. Join us at the stand, put your rum in front of thousands of bartenders and buyers, and let us take care of the rest.</p>
-        <a class="btn btn-ghost" href="#contact">Join us at a show <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#contact">Join us at a show <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="rows">
         <article class="row">
@@ -585,15 +568,8 @@ ul{margin:0;padding:0;list-style:none}
 
 <!-- ================= WHY JOIN ================= -->
 <section class="rq-why" id="why">
-  <svg class="deco" viewBox="0 0 400 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M150 470 C152 380 148 300 156 200 C160 150 164 110 170 60" stroke="#16302f" stroke-width="7" stroke-linecap="round"/>
-    <path d="M245 470 C240 390 250 320 244 240 C240 190 232 130 226 70" stroke="#16302f" stroke-width="7" stroke-linecap="round"/>
-    <path d="M170 60 C120 40 80 60 40 110 C100 105 140 90 170 60Z" fill="#cf5c36"/>
-    <path d="M170 60 C210 20 260 20 300 40 C260 60 220 75 170 60Z" fill="#cf5c36"/>
-    <path d="M226 70 C260 30 310 25 350 45 C310 70 270 85 226 70Z" fill="#16302f"/>
-    <path d="M164 120 C120 105 90 120 60 160 C110 150 140 140 164 120Z" fill="#16302f"/>
-    <path d="M233 180 C270 150 310 150 340 175 C300 190 265 195 233 180Z" fill="#cf5c36"/>
-  </svg>
+  <div class="brick on-dark" aria-hidden="true"></div>
+  <div class="grain on-dark" style="filter:url(#rqNoise)" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Why brands join us</span>
@@ -601,45 +577,38 @@ ul{margin:0;padding:0;list-style:none}
     </div>
     <div class="grid">
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l-1 9a3 3 0 0 1-6 0z"/><path d="M12 15v6"/><path d="M9 21h6"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M8 3h8l-1 9a3 3 0 0 1-6 0z"/><path d="M12 15v6"/><path d="M9 21h6"/></svg></div>
         <h3>We pour it ourselves</h3>
         <p>The Rumah is a working cocktail bar in Rotterdam. Your rum lives on our shelf, in our menu and in the hands of guests every week, not only on a trade show table.</p>
       </article>
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3.5 3 14.5 0 18"/><path d="M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 3.5 3 14.5 0 18"/><path d="M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
         <h3>A European reach</h3>
         <p>Four bar shows a year and an EU wide activation network mean your brand travels with us, from London to Berlin to Athens and home to Amsterdam.</p>
       </article>
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
         <h3>Bartenders trust bartenders</h3>
         <p>Trade education lands differently when it comes from people who have closed the bar at three in the morning. We train the way we would want to be trained.</p>
       </article>
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 6c-3 0-5-2-6-5 3 0 5 1 6 5z"/><path d="M12 10c3 0 5-2 6-5-3 0-5 1-6 5z"/><path d="M12 14c-3 0-5-2-6-5 3 0 5 1 6 5z"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M12 2v20"/><path d="M12 6c-3 0-5-2-6-5 3 0 5 1 6 5z"/><path d="M12 10c3 0 5-2 6-5-3 0-5 1-6 5z"/><path d="M12 14c-3 0-5-2-6-5 3 0 5 1 6 5z"/></svg></div>
         <h3>Curated, not crowded</h3>
         <p>We work with a focused portfolio of 15+ brands we genuinely believe in. Every producer gets attention, context and a story told properly.</p>
       </article>
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M4 15l4-4 4 3 8-8"/><path d="M15 6h5v5"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M4 19h16"/><path d="M4 15l4-4 4 3 8-8"/><path d="M15 6h5v5"/></svg></div>
         <h3>Built for the long run</h3>
         <p>Three pillars, one team, a clear plan. We prefer partnerships that grow over seasons to one off appearances that fade by the next show.</p>
       </article>
       <article class="reason">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
         <h3>Rooted in Rotterdam</h3>
         <p>A port city with an open, international outlook, and a bar that has become a home for rum lovers. It is a good place to start a European story.</p>
       </article>
     </div>
   </div>
 </section>
-
-<div class="rq-divider" style="background:#e8e2d7" aria-hidden="true">
-  <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 90h1440V60c-120-40-240-60-360-46S840 70 720 50 480 0 360 14 120 60 0 44z" fill="#16302f"/>
-    <path d="M0 44c120 16 240-16 360-30S600 30 720 50s240 6 360-36 240 26 360 46" fill="none" stroke="#cf5c36" stroke-width="1.2" stroke-opacity=".7"/>
-  </svg>
-</div>
 
 <!-- ================= CONTACT ================= -->
 <section class="rq-contact" id="contact">
@@ -673,5 +642,7 @@ ul{margin:0;padding:0;list-style:none}
     </div>
   </div>
 </section>
+
+<div class="wood-strip" style="height:22px" aria-hidden="true"></div>
 
 </div>
