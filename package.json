@@ -1,0 +1,5 @@
+{
+  "name": "rum-quarter-website",
+  "version": "1.0.0",
+  "scripts": { "start": "npx --yes serve -s . -l $PORT" }
+}

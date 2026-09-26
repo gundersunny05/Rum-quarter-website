@@ -1,0 +1,396 @@
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f4f1ec;
+    color: #16302f;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: #16302f;
+    border-bottom: 3px solid #cf5c36;
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; }
+  .logo { color: #fff; font-weight: 800; font-size: 18px; letter-spacing: 1px; text-transform: uppercase; }
+  .logo span { color: #cf5c36; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul li a { color: #d8ece9; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+  nav ul li a:hover { color: #cf5c36; }
+  .nav-cta { background: #cf5c36; color: #fff !important; padding: 8px 16px; border-radius: 3px; font-size: 13px !important; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(160deg, #16302f 0%, #1d3f3d 60%, #244f4c 100%);
+    color: #fff;
+    padding: 90px 0 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; right: -120px; top: -120px;
+    width: 420px; height: 420px; border-radius: 50%;
+    background: rgba(207,92,54,0.18);
+  }
+  .hero .wrap { position: relative; }
+  .eyebrow {
+    display: inline-block; background: #cf5c36; color: #fff;
+    padding: 6px 14px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; border-radius: 3px;
+    margin-bottom: 22px;
+  }
+  h1.hero-title {
+    font-size: 52px; font-weight: 800; line-height: 1.08;
+    max-width: 780px; letter-spacing: -1px;
+  }
+  h1.hero-title em { color: #cf5c36; font-style: normal; }
+  .hero p.sub {
+    margin-top: 22px; font-size: 19px; max-width: 620px; color: #d8ece9;
+  }
+  .hero-ctas { margin-top: 34px; display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 14px 26px; border-radius: 3px;
+    font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .5px;
+  }
+  .btn-primary { background: #cf5c36; color: #fff; }
+  .btn-outline { border: 2px solid #d8ece9; color: #fff; }
+
+  .stats-strip {
+    background: #cf5c36; color: #fff;
+  }
+  .stats-strip .wrap {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    padding: 28px 32px; text-align: center;
+  }
+  .stats-strip .stat b { display: block; font-size: 26px; font-weight: 800; }
+  .stats-strip .stat span { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; opacity: .9; }
+
+  section { padding: 80px 0; }
+  .section-tag {
+    display: inline-block; background: #16302f; color: #fff;
+    padding: 6px 14px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px; border-radius: 3px;
+    margin-bottom: 18px;
+  }
+  h2 { font-size: 34px; font-weight: 800; max-width: 700px; letter-spacing: -0.5px; }
+  p.lead { font-size: 17px; color: #445; max-width: 680px; margin-top: 14px; }
+
+  /* WHAT WE DO */
+  .pillars {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 44px;
+  }
+  .pillar-card {
+    background: #16302f; color: #fff; border-radius: 6px; padding: 26px 22px;
+    border-left: 4px solid #cf5c36;
+  }
+  .pillar-card h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: #cf5c36; margin-bottom: 12px; }
+  .pillar-card p { font-size: 14.5px; color: #d8ece9; }
+
+  /* SERVICES */
+  .services-bg { background: #fff; }
+  .service-list { margin-top: 44px; display: flex; flex-direction: column; gap: 0; }
+  .service-row {
+    display: grid; grid-template-columns: 60px 1fr; gap: 22px;
+    padding: 30px 0; border-bottom: 1px solid #e4ddd0;
+  }
+  .service-row:last-child { border-bottom: none; }
+  .service-num { font-size: 30px; font-weight: 800; color: #cf5c36; }
+  .service-row h3 { font-size: 21px; font-weight: 800; margin-bottom: 8px; }
+  .service-row p { color: #445; font-size: 15px; max-width: 640px; }
+  .tag-list { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag-pill {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px;
+    background: #f0ebe0; color: #16302f; padding: 5px 12px; border-radius: 20px;
+  }
+
+  /* BRANDS */
+  .brands-bg { background: #16302f; color: #fff; }
+  .brands-bg .section-tag { background: #cf5c36; }
+  .brands-bg h2 { color: #fff; }
+  .brands-bg p.lead { color: #d8ece9; }
+  .brand-grid {
+    margin-top: 44px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px;
+  }
+  .brand-chip {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px; padding: 18px 10px; text-align: center;
+    font-weight: 700; font-size: 13.5px; letter-spacing: .3px;
+  }
+
+  /* SHOWS */
+  .shows-grid {
+    margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  }
+  .show-card {
+    background: #fff; border: 1px solid #e4ddd0; border-radius: 6px; padding: 24px 20px;
+    border-top: 4px solid #cf5c36;
+  }
+  .show-card .place { font-weight: 800; font-size: 16px; margin-bottom: 6px; }
+  .show-card .date { font-size: 13.5px; color: #cf5c36; font-weight: 700; margin-bottom: 10px; }
+  .show-card .desc { font-size: 13.5px; color: #556; }
+
+  /* WHY */
+  .why-bg { background: #fff; }
+  .why-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .why-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: #f4f1ec; padding: 20px; border-radius: 6px;
+  }
+  .why-dot {
+    flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%;
+    background: #cf5c36; margin-top: 6px;
+  }
+  .why-item p { font-size: 14.5px; color: #334; }
+
+  /* CTA / CONTACT */
+  .contact-bg {
+    background: linear-gradient(160deg, #16302f 0%, #1d3f3d 100%);
+    color: #fff;
+  }
+  .contact-inner {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
+  }
+  .contact-inner h2 { color: #fff; }
+  .contact-inner p.lead { color: #d8ece9; }
+  .contact-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px; padding: 30px;
+  }
+  .contact-card .label { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #cf5c36; font-weight: 700; margin-bottom: 6px; }
+  .contact-card .value { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+
+  footer {
+    background: #0f2120; color: #9db6b3; padding: 30px 0; font-size: 13px;
+  }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (max-width: 860px) {
+    nav ul { display: none; }
+    h1.hero-title { font-size: 36px; }
+    .pillars, .brand-grid, .shows-grid { grid-template-columns: repeat(2,1fr); }
+    .why-grid, .contact-inner { grid-template-columns: 1fr; }
+    .stats-strip .wrap { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">The Rum <span>Quarter</span></div>
+    <ul>
+      <li><a href="#what">What we do</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#brands">Brands</a></li>
+      <li><a href="#shows">Bar shows</a></li>
+      <li><a href="#contact" class="nav-cta">Work with us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">The Rumah B.V. &middot; Rotterdam</span>
+    <h1 class="hero-title">The marketing partner<br>for the <em>rum world</em>.</h1>
+    <p class="sub">We push the rum category further across Europe: brand representation on the biggest bar shows, hands-on activations, and the trainings, masterclasses and tastings that get bartenders and retailers genuinely excited about rum.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Partner with us</a>
+      <a href="#what" class="btn btn-outline">See what we do</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats-strip">
+  <div class="wrap">
+    <div class="stat"><b>4</b><span>Bar shows a year</span></div>
+    <div class="stat"><b>15+</b><span>Brands represented</span></div>
+    <div class="stat"><b>3</b><span>Business pillars</span></div>
+    <div class="stat"><b>EU</b><span>Wide activation network</span></div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <span class="section-tag">What we do</span>
+    <h2>We get rum brands in front of the people who pour it.</h2>
+    <p class="lead">The Rumah is a rum ambassador at heart. The Rum Quarter is how we turn that into a platform: one shared booth on the world's leading bar shows, full brand promotion on this site, and the on-the-ground activations and distribution introductions that help a brand actually grow in Europe.</p>
+    <div class="pillars">
+      <div class="pillar-card">
+        <h3>Train</h3>
+        <p>Trainings & masterclasses for trade and consumers. Educating bartenders, slijterijen and venues on rum and sugarcane categories.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Activate</h3>
+        <p>Brand ambassadorships across the Netherlands and Europe. Guest shifts, in-store events, brand activations, organised and hosted.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Represent</h3>
+        <p>At trade shows: a cheaper alternative to a full booth. We man the stand, scan visitors, present and represent the brand.</p>
+      </div>
+      <div class="pillar-card">
+        <h3>Connect</h3>
+        <p>We bring brands, bartenders, importers and venues together. Our network is your network: introductions, distribution leads, partnerships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services-bg">
+  <div class="wrap">
+    <span class="section-tag">How we work with brands</span>
+    <h2>Three ways to grow with The Rum Quarter.</h2>
+    <p class="lead">Whether you're a distiller looking for European distribution, or a venue that wants its rum program to actually sell, we plug in at the level you need.</p>
+    <div class="service-list">
+      <div class="service-row">
+        <div class="service-num">01</div>
+        <div>
+          <h3>Brand Support</h3>
+          <p>Annual ambassadorships and trade show representation for sugarcane spirit brands. We share one takeover stand at the major European bar shows so you get the exposure of a full booth for a fraction of the cost, plus direct engagement with bartenders, bar owners and importers.</p>
+          <div class="tag-list">
+            <span class="tag-pill">Brand ambassadorship</span>
+            <span class="tag-pill">Trade show stand-sharing</span>
+            <span class="tag-pill">Lead capture & CRM</span>
+            <span class="tag-pill">Brand storytelling</span>
+            <span class="tag-pill">Network introductions</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">02</div>
+        <div>
+          <h3>Activations & Events</h3>
+          <p>Live brand work across the Netherlands and Europe. From retail tastings at the local slijterij to industry masterclasses for bartenders, guest shifts behind partner bars, and fully-produced brand events. Sugarcane spirits only, always hosted by The Rumah.</p>
+          <div class="tag-list">
+            <span class="tag-pill">Retail masterclasses</span>
+            <span class="tag-pill">Industry masterclasses</span>
+            <span class="tag-pill">Guest shifts</span>
+            <span class="tag-pill">Custom brand events</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-row">
+        <div class="service-num">03</div>
+        <div>
+          <h3>Venue Consulting</h3>
+          <p>For bars and restaurants, across any spirit category. Cocktail menu development, staff training and recurring cocktail batch production, so your team pours a consistent, better drink without needing a rum specialist behind every shift.</p>
+          <div class="tag-list">
+            <span class="tag-pill">Menu development</span>
+            <span class="tag-pill">Staff training</span>
+            <span class="tag-pill">Cocktail batches</span>
+            <span class="tag-pill">Ongoing consulting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brands" class="brands-bg">
+  <div class="wrap">
+    <span class="section-tag">Who we've worked with</span>
+    <h2>Brands that joined us on previous editions.</h2>
+    <p class="lead">A small selection of the distillers and importers who have shared the stand with us at BCB London, BCB Berlin and the Athens Bar Show.</p>
+    <div class="brand-grid">
+      <div class="brand-chip">Ron Colón Salvadoreño</div>
+      <div class="brand-chip">Clairin</div>
+      <div class="brand-chip">Black Tot Rum</div>
+      <div class="brand-chip">Alibi Aged Rum</div>
+      <div class="brand-chip">William George</div>
+      <div class="brand-chip">Savanna</div>
+      <div class="brand-chip">Sampan</div>
+      <div class="brand-chip">Worthy Park</div>
+      <div class="brand-chip">Paranubes</div>
+      <div class="brand-chip">Doorly's</div>
+      <div class="brand-chip">Mates Rum</div>
+      <div class="brand-chip">The Duppy Share</div>
+      <div class="brand-chip">Takamaka</div>
+      <div class="brand-chip">Ron Cubay</div>
+      <div class="brand-chip">Ron Cristóbal</div>
+      <div class="brand-chip">Rhum J.M</div>
+    </div>
+  </div>
+</section>
+
+<section id="shows">
+  <div class="wrap">
+    <span class="section-tag">Where to find us</span>
+    <h2>The Rum Quarter is going on tour again.</h2>
+    <p class="lead">One booth, different brands, a full masterclass program, room for tastings and meetings, and bartenders from The Rumah shaking rum drinks. Industry professionals can visit, get educated by our bartenders and brand owners, and taste the differences in rum styles first hand.</p>
+    <div class="shows-grid">
+      <div class="show-card">
+        <div class="place">BCB London</div>
+        <div class="date">May</div>
+        <div class="desc">Our first stop of the season, bringing the rum category to one of the industry's biggest stages.</div>
+      </div>
+      <div class="show-card">
+        <div class="place">BCB Berlin</div>
+        <div class="date">October</div>
+        <div class="desc">Our flagship takeover: the biggest edition, with the widest brand line-up and a full masterclass program.</div>
+      </div>
+      <div class="show-card">
+        <div class="place">Art of Drinks Amsterdam</div>
+        <div class="date">To be announced</div>
+        <div class="desc">Bringing The Rum Quarter closer to home, joining forces with fellow rum brands in the Netherlands.</div>
+      </div>
+      <div class="show-card">
+        <div class="place">Athens Bar Show</div>
+        <div class="date">November</div>
+        <div class="desc">Closing out the year in Greece, reaching a fast-growing corner of the European bar scene.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-bg">
+  <div class="wrap">
+    <span class="section-tag">Why brands join us</span>
+    <h2>We're already doing this, every week, at The Rumah.</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-dot"></div>
+        <p>Credibility built over years behind the bar: Gault & Millau 2024 Best Cocktail Bar, BCB veterans, and existing brand partnerships already in place.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-dot"></div>
+        <p>Sugarcane-only focus means clean positioning: no competing with general spirits platforms, all attention on rum, cachaça and agricole.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-dot"></div>
+        <p>Trade show stand-sharing is a real, proven value: brands get the exposure of a full booth without the build, staffing and travel cost of doing it alone.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-dot"></div>
+        <p>Venue consulting keeps us behind real bars every day, so what we teach at a masterclass is exactly what we pour on our own menu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-bg">
+  <div class="wrap contact-inner">
+    <div>
+      <span class="section-tag">Let's talk</span>
+      <h2>Bring your brand to The Rum Quarter.</h2>
+      <p class="lead">Whether you want a stand at the next bar show, a training program for the Dutch or European market, or help finding your way into new distribution, we'd love to hear about your brand.</p>
+    </div>
+    <div class="contact-card">
+      <div class="label">Email</div>
+      <div class="value">edward@therumquarter.com</div>
+      <div class="label">Based at</div>
+      <div class="value">The Rumah B.V., Oude Binnenweg 110C, Rotterdam</div>
+      <div class="label">Founders</div>
+      <div class="value">Edward Nijhoff &amp; Daryl Lieuw-On</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 The Rum Quarter &middot; a platform by The Rumah B.V.</div>
+    <div>Rotterdam, the Netherlands</div>
+  </div>
+</footer>
