@@ -103,7 +103,7 @@ ul{margin:0;padding:0;list-style:none}
 .rq-nav .burger span{display:block;width:18px;height:2px;background:var(--iron);margin:2.5px 0;transition:transform .3s,opacity .3s}
 
 .rq-hero{position:relative;background:var(--iron);color:var(--paper);overflow:hidden;border-bottom:6px solid var(--rust)}
-.rq-hero .bg{position:absolute;inset:0;background-image:url('images/hero-distillery.png');background-size:cover;background-position:center 40%;filter:saturate(.85) contrast(1.02)}
+.rq-hero .bg{position:absolute;inset:0;background-image:url('images/event-anniversary.jpg');background-size:cover;background-position:center 30%;filter:saturate(.85) contrast(1.02)}
 .rq-hero .bg::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(58,50,41,.86) 0%,rgba(58,50,41,.62) 46%,rgba(90,54,27,.28) 100%)}
 .rq-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,50,41,.2) 0%,transparent 30%,transparent 70%,rgba(58,50,41,.5) 100%)}
 .rq-hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3rem;min-height:calc(100vh - 76px);padding:5.5rem 0 4.5rem;align-items:center}
@@ -168,12 +168,12 @@ ul{margin:0;padding:0;list-style:none}
 .rq-wall .head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3.2rem}
 .rq-wall .head p{max-width:36ch;text-align:right}
 .rq-wall .names{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:3px solid var(--iron);border-left:1px solid var(--line)}
-.rq-wall .names li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:2rem 1.3rem;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--head);font-size:1.15rem;font-weight:500;text-transform:uppercase;letter-spacing:.03em;position:relative;transition:background .25s,color .25s;background:var(--white)}
-.rq-wall .names li::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.rq-wall .names li{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;display:flex;align-items:stretch;justify-content:center;text-align:center;font-family:var(--head);font-size:1.15rem;font-weight:500;text-transform:uppercase;letter-spacing:.03em;position:relative;transition:background .25s,color .25s;background:var(--white)}
+.rq-wall .names li a{display:flex;align-items:center;justify-content:center;width:100%;padding:2rem 1.3rem}
+.rq-wall .names li::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .25s;z-index:1}
 .rq-wall .names li:hover{background:var(--iron);color:var(--paper)}
 .rq-wall .names li:hover::before{transform:scaleX(1)}
-.rq-wall .names li.accent{background:var(--rust);color:var(--white);font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;font-weight:700;padding:0}
-.rq-wall .names li.accent a{display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:2rem 1.3rem}
+.rq-wall .names li.accent{background:var(--rust);color:var(--white);font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;font-weight:700}
 .rq-wall .names li.accent:hover{background:var(--iron)}
 
 .rq-spot{background:var(--paper-dim);color:var(--ink);padding:var(--sec) 0;position:relative;border-top:6px solid var(--rust)}
@@ -299,8 +299,8 @@ ul{margin:0;padding:0;list-style:none}
   .rq-wall .head{flex-direction:column;align-items:flex-start}
   .rq-wall .head p{text-align:left}
   .rq-wall .names{grid-template-columns:repeat(2,1fr)}
-  .rq-wall .names li{padding:1.5rem 1rem;font-size:1rem}
-  .rq-wall .names li.accent a{padding:1.5rem 1rem}
+  .rq-wall .names li{font-size:1rem}
+  .rq-wall .names li a{padding:1.5rem 1rem}
   .rq-spot .cards,.rq-why .grid{grid-template-columns:1fr}
   .rq-spot .card{border-right:none !important;border-bottom:1px solid var(--line-strong) !important}
   .rq-spot .card:last-child{border-bottom:none !important}
@@ -352,7 +352,7 @@ ul{margin:0;padding:0;list-style:none}
       </div>
     </div>
     <div class="rig">
-      <img src="images/rum-glass.png" alt="A glass of aged rum on a concrete bar counter" loading="eager">
+      <img src="images/team-hero.jpg" alt="A bartender at The Rumah in Rotterdam" loading="eager">
     </div>
   </div>
   <div class="stats wood-strip">
@@ -461,23 +461,23 @@ ul{margin:0;padding:0;list-style:none}
       <p class="lede">Producers, estates and independent bottlers from the Caribbean, Latin America, the Indian Ocean and Europe.</p>
     </div>
     <ul class="names">
-      <li><span>Ron Colón Salvadoreño</span></li>
-      <li><span>Clairin</span></li>
-      <li><span>Worthy Park</span></li>
-      <li><span>Savanna</span></li>
-      <li><span>Paranubes</span></li>
-      <li><span>Dos Maderas</span></li>
-      <li><span>Black Tot Rum</span></li>
-      <li><span>Alibi Aged Rum</span></li>
-      <li><span>William George</span></li>
-      <li><span>Sampan</span></li>
-      <li><span>Doorly's</span></li>
-      <li><span>Mates Rum</span></li>
-      <li><span>The Duppy Share</span></li>
-      <li><span>Takamaka</span></li>
-      <li><span>Ron Cubay</span></li>
-      <li><span>Ron Cristóbal</span></li>
-      <li><span>Rhum J.M</span></li>
+      <li><a href="#ron-colon"><span>Ron Colón Salvadoreño</span></a></li>
+      <li><a href="#clairin"><span>Clairin</span></a></li>
+      <li><a href="#worthy-park"><span>Worthy Park</span></a></li>
+      <li><a href="#savanna"><span>Savanna</span></a></li>
+      <li><a href="#paranubes"><span>Paranubes</span></a></li>
+      <li><a href="#dos-maderas"><span>Dos Maderas</span></a></li>
+      <li><a href="#black-tot"><span>Black Tot Rum</span></a></li>
+      <li><a href="#alibi"><span>Alibi Aged Rum</span></a></li>
+      <li><a href="#william-george"><span>William George</span></a></li>
+      <li><a href="#sampan"><span>Sampan</span></a></li>
+      <li><a href="#doorlys"><span>Doorly's</span></a></li>
+      <li><a href="#mates"><span>Mates Rum</span></a></li>
+      <li><a href="#duppy-share"><span>The Duppy Share</span></a></li>
+      <li><a href="#takamaka"><span>Takamaka</span></a></li>
+      <li><a href="#ron-cubay"><span>Ron Cubay</span></a></li>
+      <li><a href="#ron-cristobal"><span>Ron Cristóbal</span></a></li>
+      <li><a href="#rhum-jm"><span>Rhum J.M</span></a></li>
       <li class="accent"><a href="#contact"><span>Your brand next</span></a></li>
     </ul>
   </div>
@@ -504,13 +504,13 @@ ul{margin:0;padding:0;list-style:none}
     <div class="head">
       <div>
         <span class="eyebrow">Brand spotlight</span>
-        <h2 class="h-l">Six producers, six stories worth telling.</h2>
+        <h2 class="h-l">Seventeen producers, seventeen stories worth telling.</h2>
       </div>
       <p class="lede">A closer look at partner brands we represent. Each one has a place, a method and a reason to exist. That is the kind of rum we want on the back bar.</p>
     </div>
     <div class="cards">
 
-      <article class="card">
+      <article class="card" id="worthy-park">
         <span class="origin">Jamaica</span>
         <h3>Worthy Park Estate</h3>
         <p>Nestled 1200 feet above sea level, Worthy Park spans over 10000 acres of sugar cane fields and forest. The estate produces award winning Jamaican rum, including its signature Rum-Bar Rum, with traditions dating back to 1670. Sustainability and zero waste production sit at the heart of everything the estate does.</p>
@@ -520,7 +520,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="ron-colon">
         <span class="origin">El Salvador</span>
         <h3>Ron Colón Salvadoreño</h3>
         <p>RCS started as a bartender's passion project with one aim: to innovate the rum category. The name pays homage to the Colón, El Salvador's historic currency retired in 2001. Like old coins, rum grows more valuable the longer it is aged.</p>
@@ -530,7 +530,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="clairin">
         <span class="origin">Haiti</span>
         <h3>Clairin</h3>
         <p>Unaged, wild fermented sugarcane rum made in small batches by independent Haitian distilleries using traditional pot stills and no additives. Clairin is less a single brand than a whole category, and one of the last truly artisanal rum traditions left in the world.</p>
@@ -540,7 +540,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="savanna">
         <span class="origin">Réunion Island</span>
         <h3>Savanna</h3>
         <p>Distillerie de Savanna has produced rum at the Bois Rouge estate in Saint André for over 150 years. Its rums are shaped by volcanic sugarcane, sea spray and generations of distilling expertise, and are known for precision, intensity and remarkable aromatic depth.</p>
@@ -550,7 +550,7 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="paranubes">
         <span class="origin">Oaxaca, Mexico</span>
         <h3>Paranubes</h3>
         <p>In Rio Tuerto, in the Sierra Mazateca region of Northern Oaxaca, one family has made pure cane juice rum for three generations and over 100 years. Cane from ancestral fields nearly 500 years old is hand harvested and pressed daily, then wild fermented. A true expression of Mexico's cloud forests.</p>
@@ -560,13 +560,123 @@ ul{margin:0;padding:0;list-style:none}
         </div>
       </article>
 
-      <article class="card">
+      <article class="card" id="dos-maderas">
         <span class="origin">Jerez, Spain</span>
         <h3>Dos Maderas</h3>
         <p>Made by Bodegas Williams and Humbert in Jerez through a signature double maturation. The rum is aged first in the Caribbean, then shipped to Spain for further ageing in the same sherry casks the bodega uses for its wines.</p>
         <div class="acts">
           <a class="visit" href="https://dosmaderas.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
           <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Dos%20Maderas">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="black-tot">
+        <span class="origin">United Kingdom</span>
+        <h3>Black Tot Rum</h3>
+        <p>Named after Black Tot Day, 31 July 1970, when the Royal Navy ended its daily rum ration after more than 200 years. The modern brand was built by Elixir Distillers after founder Sukhinder Singh acquired original Royal Navy rum stock in 2007. Its Finest Caribbean Rum, launched in 2019, blends rum from Guyana, Barbados, Jamaica and Trinidad.</p>
+        <div class="acts">
+          <a class="visit" href="https://blacktot.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Black%20Tot%20Rum">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="alibi">
+        <span class="origin">Barbados, Trinidad &amp; Jamaica</span>
+        <h3>Alibi Aged Rum</h3>
+        <p>Distilled in Barbados, Trinidad and Tobago, and Jamaica, then blended in the Netherlands. Developed by award winning bartender and bar owner Hani Asfdaai to combine the strengths of different distilleries into one blend rather than bottling a single origin.</p>
+        <div class="acts">
+          <a class="visit" href="https://alibirum.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Alibi%20Aged%20Rum">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="william-george">
+        <span class="origin">Jamaica &amp; Trinidad</span>
+        <h3>William George</h3>
+        <p>Created by bartender Andrew Nicholls with Richard Nicholls, named after their grandfathers William Simpson and George Nicholls. A blend of four Jamaican pot stilled rums and two Trinidad and Tobago column stilled rums, blended in Amsterdam. The label carries a compass pointing true north from Victoria Falls, where the two grandfathers once lived.</p>
+        <div class="acts">
+          <a class="visit" href="https://williamgeorgerum.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20William%20George">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="sampan">
+        <span class="origin">Hoi An, Vietnam</span>
+        <h3>Sampan</h3>
+        <p>Pure cane juice rum from Distillerie d'Indochine near Hoi An, founded by master distiller Antoine Poircuitte together with Julien Masset and Jan Visser. The name references the traditional Southeast Asian boat and the historic trade route between Asia and the Caribbean. The range runs from bright white rums to aged expressions finished in ex Cognac French oak.</p>
+        <div class="acts">
+          <a class="visit" href="https://rhumattitude.com/en/marque/sampan/" target="_blank" rel="noopener">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Sampan">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="doorlys">
+        <span class="origin">Barbados</span>
+        <h3>Doorly's</h3>
+        <p>Martin Doorly and Co registered the brand in Barbados in 1908, and it became the first bottled rum ever exported from the island. R.L. Seale purchased Doorly's in 1993 and moved production to the Foursquare Distillery, where it is best known today for its sherry cask finished XO.</p>
+        <div class="acts">
+          <a class="visit" href="https://masterofmalt.com/distilleries/doorlys-distillery/" target="_blank" rel="noopener">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Doorly%27s">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="mates">
+        <span class="origin">Barbados, Dominican Republic &amp; Jamaica</span>
+        <h3>Mates Rum</h3>
+        <p>A blend of three to five year old rums, English style smoothness from Barbados, sweetness from the Dominican Republic and fruit forward high ester rum from Jamaica, with no added sugar or artificial flavouring. The bottle itself is 35 percent lighter than a standard design to cut emissions in transport.</p>
+        <div class="acts">
+          <a class="visit" href="https://drinkwithmates.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Mates%20Rum">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="duppy-share">
+        <span class="origin">Jamaica &amp; Barbados</span>
+        <h3>The Duppy Share</h3>
+        <p>Founded in 2015 by George Frost, soon joined by Jessica Swinfen, and named after the Caribbean folklore belief that duppies steal the best share of ageing rum, a play on the angel's share. A blend of rums from Worthy Park Estate and the Foursquare distillery, positioned as a modern rather than a postcard view of the Caribbean. British rapper Kano became a co owner in 2021.</p>
+        <div class="acts">
+          <a class="visit" href="https://theduppyshare.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20The%20Duppy%20Share">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="takamaka">
+        <span class="origin">Mahé, Seychelles</span>
+        <h3>Takamaka</h3>
+        <p>Produced at the Trois Frères Distillery on Mahé by the D'Offay family since 2002, the first and only commercial rum producer and exporter in the Seychelles. Made from organic sugar cane grown by local cooperatives and distilled on three copper stills, on a former spice plantation site dating from 1792.</p>
+        <div class="acts">
+          <a class="visit" href="https://takamakarum.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Takamaka">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="ron-cubay">
+        <span class="origin">Villa Clara, Cuba</span>
+        <h3>Ron Cubay</h3>
+        <p>Introduced domestically in Cuba in 1964 from Santo Domingo in the Villa Clara region, known there as the taste of the centre. Produced today by the state owned Corporación Cuba Ron at the Ronera Central and Ronera Cárdenas distilleries, and made available internationally from 2010 onward.</p>
+        <div class="acts">
+          <a class="visit" href="https://masterofmalt.com/distilleries/ron-cubay-distillery/" target="_blank" rel="noopener">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Ron%20Cubay">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="ron-cristobal">
+        <span class="origin">Dominican Republic</span>
+        <h3>Ron Cristóbal</h3>
+        <p>Created by Danish producer 1423 World Class Spirits and named after Cristóbal Colón, Christopher Columbus. Aged in the Dominican Republic, with a range that includes the fresh cane juice Blanco, the Bourbon cask aged Pinta named after Columbus's ship, the Niña blend of eight and twelve year old rums, and a 151 proof overproof.</p>
+        <div class="acts">
+          <a class="visit" href="https://1423.eu" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Ron%20Crist%C3%B3bal">Contact us</a>
+        </div>
+      </article>
+
+      <article class="card" id="rhum-jm">
+        <span class="origin">Macouba, Martinique</span>
+        <h3>Rhum J.M</h3>
+        <p>The distillery's history dates to around 1790, when Antoine Leroux-Préville built a sugar factory on Martinique's northern coast. Jean-Marie Martin, whose initials give the brand its name, bought the site in 1845 and converted it into a distillery. Rhum J.M makes AOC Martinique rhum agricole from fresh estate grown cane juice rather than molasses, and runs its own cooperage to reprocess its barrels rather than sell them on.</p>
+        <div class="acts">
+          <a class="visit" href="https://rhum-jm.com" target="_blank" rel="noopener">Visit site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg></a>
+          <a class="mail" href="mailto:edward@therumquarter.com?subject=Interested%20in%20Rhum%20J.M">Contact us</a>
         </div>
       </article>
 
@@ -613,7 +723,7 @@ ul{margin:0;padding:0;list-style:none}
   <div class="brick" aria-hidden="true"></div>
   <div class="wrap split">
     <figure>
-      <img src="images/cocktail.png" alt="A tropical rum cocktail with mint and lime on a bar counter" loading="lazy">
+      <img src="images/cocktail-serve.jpg" alt="A bartender at The Rumah straining a rum cocktail into chilled glasses" loading="lazy">
     </figure>
     <div>
       <span class="eyebrow">On the bar</span>
