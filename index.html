@@ -68,13 +68,29 @@ p{margin:0}
 .brands{background:var(--black);color:var(--white);padding:var(--sec) 0;border-top:4px solid var(--red)}
 .brands .label{color:var(--white)}
 .brands .intro{max-width:46ch;margin-top:18px;color:var(--grey-light)}
-.names{columns:3;column-gap:clamp(24px,5vw,64px);margin:clamp(30px,5vw,52px) 0 0;padding:0;list-style:none}
-.names li{break-inside:avoid;padding:12px 0;border-bottom:1px solid var(--line-dark);font-size:clamp(1.05rem,1.7vw,1.3rem);font-weight:600;line-height:1.3}
+.names{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;column-gap:clamp(24px,5vw,64px);margin:clamp(30px,5vw,52px) 0 0;padding:0;list-style:none}
+.names li{border-bottom:1px solid var(--line-dark)}
+.brand{position:relative}
+.brand summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;font-size:clamp(1.05rem,1.7vw,1.3rem);font-weight:600;line-height:1.3;cursor:pointer;list-style:none}
+.brand summary::-webkit-details-marker{display:none}
+.brand summary::after{content:"+";color:var(--grey);font-weight:400}
+.brand summary:hover,.brand[open] summary{color:var(--red-bright)}
+.brand[open] summary::after{content:"\2212";color:var(--red-bright)}
+.brand-card{position:absolute;z-index:5;top:100%;left:0;right:0;padding:16px 18px;border-radius:8px;background:var(--white);color:var(--muted);font-size:.95rem;line-height:1.5;box-shadow:0 20px 25px -5px rgba(0,0,0,.5),0 8px 10px -6px rgba(0,0,0,.5)}
+.brand-card .origin{margin-bottom:6px;color:var(--red);font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.brand-card a{display:inline-block;margin-top:10px;padding:2px 0;color:var(--red);font-weight:600;text-underline-offset:3px}
+.brand-close{display:none}
+
+/* Next show */
+.show{padding:var(--sec) 0}
+.show .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.show h2{color:var(--red)}
+.show .people{margin-top:0}
 
 /* Contact */
 .contact{padding:var(--sec) 0}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:center}
-.contact .intro{margin-top:18px;font-size:1.25rem;line-height:1.5;font-weight:600}
+.contact .intro,.show .intro{margin-top:18px;font-size:1.25rem;line-height:1.5;font-weight:600}
 .btn{display:inline-block;margin-top:26px;padding:16px 40px;border-radius:6px;background:var(--red);color:var(--white);font-size:1.125rem;font-weight:500;text-decoration:none;overflow-wrap:anywhere}
 .btn:hover,.btn:focus-visible{background:var(--red-dark)}
 .people{margin:32px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
@@ -92,16 +108,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 2
 :focus-visible{outline:3px solid var(--red-bright);outline-offset:2px}
 
 @media (max-width:820px){
-  .what .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+  .what .wrap,.contact .wrap,.show .wrap{grid-template-columns:minmax(0,1fr)}
   .what figure img,.contact figure img{aspect-ratio:3/2}
   .contact figure{order:-1}
   .strip{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .strip img:nth-child(3n+1){grid-column:1/-1}
-  .names{columns:2}
+  .names{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(9,auto)}
+}
+@media (max-width:600px){
+  .brand-card{position:fixed;z-index:20;top:auto;left:12px;right:12px;bottom:12px;max-height:70vh;overflow:auto;padding:18px 44px 18px 18px}
+  .brand-card::before{content:attr(data-name);display:block;margin-bottom:4px;color:var(--ink);font-size:1.15rem;font-weight:800;letter-spacing:-.01em}
+  .brand-close{display:block;position:absolute;top:8px;right:8px;width:36px;height:36px;padding:0;border:0;background:none;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
 }
 @media (max-width:460px){
   .hero img{object-position:24% 30%}
-  .names li{font-size:1rem}
+  .brand summary{font-size:1rem}
   .btn{padding:14px 20px;font-size:1rem}
   .people li{grid-template-columns:minmax(0,1fr);gap:0}
 }
@@ -118,6 +139,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 2
     <p class="tag">One stand for rum at Europe's bar shows.</p>
     <nav aria-label="On this page">
       <a href="#what">What we do</a>
+      <a href="#next-show" data-next-show>Next show</a>
       <a href="#brands">Brands</a>
       <a href="#contact">Get in contact</a>
     </nav>
@@ -158,30 +180,113 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 2
     <figcaption><div class="wrap">Bar Convent Berlin 2025</div></figcaption>
   </figure>
 
+  <section class="show" id="next-show" data-next-show>
+    <div class="wrap">
+      <div>
+        <p class="label">Next show</p>
+        <h2>Athens Bar Show</h2>
+        <p class="intro">Come and taste with us at The Rum Quarter stand.</p>
+        <a class="btn" href="https://www.athensbarshow.gr" target="_blank" rel="noopener">Show website</a>
+      </div>
+      <ul class="people">
+        <li><span>When</span><strong>3 and 4 November 2026, 11:00 to 19:00</strong></li>
+        <li><span>Where</span><strong>Technopolis City of Athens, Greece</strong></li>
+        <li><span>With us</span><strong>327 Rum, Dos Maderas, Paranubes, Savanna and Worthy Park</strong></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="brands" id="brands">
     <div class="wrap">
       <p class="label">Brands we worked with</p>
       <h2>Good company</h2>
       <p class="intro">Rum from the Caribbean, Latin America, the Indian Ocean and further afield.</p>
       <ul class="names">
-        <li>327 Rum</li>
-        <li>Alibi Aged Rum</li>
-        <li>Black Tot Rum</li>
-        <li>Clairin</li>
-        <li>Doorly's</li>
-        <li>Dos Maderas</li>
-        <li>Mates Rum</li>
-        <li>Paranubes</li>
-        <li>Rhum J.M</li>
-        <li>Ron Colón Salvadoreño</li>
-        <li>Ron Cristóbal</li>
-        <li>Ron Cubay</li>
-        <li>Sampan</li>
-        <li>Savanna</li>
-        <li>Takamaka</li>
-        <li>The Duppy Share</li>
-        <li>William George</li>
-        <li>Worthy Park</li>
+        <li><details class="brand"><summary>327 Rum</summary><div class="brand-card">
+          <p class="origin">Guyana, Guatemala, Panama &amp; Venezuela</p>
+          <p>A double aged XO blend of rums from four countries, finished for warm tropical notes. Every bottle is filled by hand.</p>
+          <a href="https://327rum.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Alibi Aged Rum</summary><div class="brand-card">
+          <p class="origin">Barbados, Trinidad &amp; Jamaica</p>
+          <p>Bartender and bar owner Hani Asfdaai developed this rum. It's distilled in Barbados, Trinidad and Tobago, and Jamaica, then blended in the Netherlands.</p>
+          <a href="https://www.alibirum.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Black Tot Rum</summary><div class="brand-card">
+          <p class="origin">United Kingdom</p>
+          <p>The name comes from Black Tot Day, 31 July 1970, when the Royal Navy ended its daily rum ration. The Finest Caribbean Rum blends rum from Guyana, Barbados, Jamaica and Trinidad.</p>
+          <a href="https://blacktot.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Clairin</summary><div class="brand-card">
+          <p class="origin">Haiti</p>
+          <p>Clairin is a category of rum rather than one brand. Independent Haitian distilleries make it from sugarcane in small batches, wild fermented and unaged.</p>
+        </div></details></li>
+        <li><details class="brand"><summary>Doorly's</summary><div class="brand-card">
+          <p class="origin">Barbados</p>
+          <p>Martin Doorly and Co registered the brand in Barbados in 1908. It's made today at the Foursquare Distillery and is best known for its sherry cask finished XO.</p>
+        </div></details></li>
+        <li><details class="brand"><summary>Dos Maderas</summary><div class="brand-card">
+          <p class="origin">Jerez, Spain</p>
+          <p>This rum ages first in the Caribbean, then travels to Jerez to age further in the sherry casks of Bodegas Williams and Humbert.</p>
+          <a href="https://dosmaderas.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Mates Rum</summary><div class="brand-card">
+          <p class="origin">Barbados, Dominican Republic &amp; Jamaica</p>
+          <p>A blend of three to five year old rums with no added sugar or artificial flavouring. The bottle is 35 percent lighter than a standard design to cut emissions in transport.</p>
+        </div></details></li>
+        <li><details class="brand"><summary>Paranubes</summary><div class="brand-card">
+          <p class="origin">Oaxaca, Mexico</p>
+          <p>One family has made this pure cane juice rum in the Sierra Mazateca for three generations. They press the cane daily and wild ferment the juice.</p>
+          <a href="https://www.paranubes.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Rhum J.M</summary><div class="brand-card">
+          <p class="origin">Macouba, Martinique</p>
+          <p>AOC Martinique rhum agricole made from fresh estate grown cane juice. Jean-Marie Martin, whose initials give the brand its name, bought the site in 1845.</p>
+          <a href="https://www.rhum-jm.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Ron Colón Salvadoreño</summary><div class="brand-card">
+          <p class="origin">El Salvador</p>
+          <p>This rum started as a bartender's passion project, made to do something new with the category. The name honours the Colón, the currency El Salvador retired in 2001.</p>
+          <a href="https://roncolon.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Ron Cristóbal</summary><div class="brand-card">
+          <p class="origin">Dominican Republic</p>
+          <p>Danish producer 1423 World Class Spirits created this rum, which is aged in the Dominican Republic. The name comes from Cristóbal Colón, Christopher Columbus.</p>
+          <a href="https://www.roncristobal.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Ron Cubay</summary><div class="brand-card">
+          <p class="origin">Villa Clara, Cuba</p>
+          <p>Ron Cubay launched in Cuba in 1964 from Santo Domingo in the Villa Clara region, and has been sold internationally since 2010.</p>
+        </div></details></li>
+        <li><details class="brand"><summary>Sampan</summary><div class="brand-card">
+          <p class="origin">Hoi An, Vietnam</p>
+          <p>Pure cane juice rum from Distillerie d'Indochine near Hoi An. The name refers to the traditional Southeast Asian boat.</p>
+        </div></details></li>
+        <li><details class="brand"><summary>Savanna</summary><div class="brand-card">
+          <p class="origin">Réunion Island</p>
+          <p>Distillerie de Savanna has made rum at the Bois Rouge estate in Saint André for over 150 years.</p>
+          <a href="https://www.savanna.fr" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Takamaka</summary><div class="brand-card">
+          <p class="origin">Mahé, Seychelles</p>
+          <p>The d'Offay family has made this rum at the Trois Frères Distillery on Mahé since 2002, from organic sugar cane grown by local cooperatives.</p>
+          <a href="https://www.takamakarum.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>The Duppy Share</summary><div class="brand-card">
+          <p class="origin">Jamaica &amp; Barbados</p>
+          <p>A blend of rums from Worthy Park Estate and the Foursquare distillery. The name comes from the Caribbean belief that duppies steal the best share of ageing rum.</p>
+          <a href="https://www.theduppyshare.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>William George</summary><div class="brand-card">
+          <p class="origin">Jamaica &amp; Trinidad</p>
+          <p>Four Jamaican pot stilled rums and two Trinidad and Tobago column stilled rums, blended in Amsterdam. Its creators named it after their grandfathers.</p>
+          <a href="https://www.williamgeorgerum.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
+        <li><details class="brand"><summary>Worthy Park</summary><div class="brand-card">
+          <p class="origin">Jamaica</p>
+          <p>Single estate Jamaican rum from 1,200 feet above sea level, where rum making goes back to 1670. The estate distils it in copper pot stills.</p>
+          <a href="https://worthyparkestate.com" target="_blank" rel="noopener">Official website</a>
+        </div></details></li>
       </ul>
     </div>
   </section>
@@ -225,5 +330,43 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 2
   </div>
 </footer>
 
+<script>
+(() => {
+  const brands = [...document.querySelectorAll('.brand')];
+  const canHover = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const closeAll = except => brands.forEach(b => { if (b !== except) b.open = false; });
+
+  brands.forEach(brand => {
+    const summary = brand.querySelector('summary');
+    const card = brand.querySelector('.brand-card');
+    const close = document.createElement('button');
+    close.type = 'button';
+    close.className = 'brand-close';
+    close.ariaLabel = 'Close';
+    close.textContent = '×';
+    close.addEventListener('click', () => { brand.open = false; summary.focus(); });
+    card.append(close);
+    card.dataset.name = summary.textContent;
+
+    brand.addEventListener('toggle', () => { if (brand.open) closeAll(brand); });
+
+    if (canHover) {
+      let timer;
+      brand.addEventListener('mouseenter', () => { clearTimeout(timer); timer = setTimeout(() => { brand.open = true; }, 90); });
+      brand.addEventListener('mouseleave', () => { clearTimeout(timer); timer = setTimeout(() => { brand.open = false; }, 200); });
+      summary.addEventListener('click', e => { if (e.detail) e.preventDefault(); });
+    }
+  });
+
+  document.addEventListener('click', e => { if (!e.target.closest('.brand')) closeAll(); });
+  document.addEventListener('keydown', e => {
+    const open = brands.find(b => b.open);
+    if (e.key === 'Escape' && open) { open.open = false; open.querySelector('summary').focus(); }
+  });
+
+  // Hide the show once it is over, so the page never lists a past date as next.
+  if (Date.now() >= Date.parse('2026-11-05T00:00:00+02:00')) document.querySelectorAll('[data-next-show]').forEach(el => el.remove());
+})();
+</script>
 </body>
 </html>
